@@ -25,7 +25,7 @@ function init(){
   function createGrid(startPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      // cell.innerText = i
+      cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     //   const rowColumns = document.querySelector('.grid div')
