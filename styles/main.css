@@ -9,12 +9,16 @@
     box-sizing: border-box;
   }
 body{
-    /* background-image: url(https://i.imgur.com/y0edu30.jpg);
+    background-image: url(https://i.imgur.com/YJwdUwP.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 300px; */
+    /* height: 300px; */
     height: 100vh;
-    background-color: green;
+    background-color: rgb(77, 37, 37);
+}
+.main{
+    display: flex;
+    justify-content: center;
 }
 .grid-wrapper{
     height: 100vh;
@@ -37,8 +41,21 @@ body{
     height: 11%;
     width: 9%;
   }.grid div.frodo {
-    background-image: url('https://i.imgur.com/W1yJEGy.png');
+    background-image: url('https://i.imgur.com/1ZZvLHa.png');
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
+    display: block;
+  }
+  .left-content {
+    display: flex;
+    flex-direction: column;
+    margin: 150px 100px 0px 0px;
+  }
+  .start-button{
+    padding: 15px 50px 15px 50px;
+    margin: 20px;
+  }
+  .how-to{
+      text-align: center;
   }
