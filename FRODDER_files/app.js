@@ -2,6 +2,25 @@ function init(){
 
   // HOVER INSTRUCTIONS
 
+  
+  // const hoverImg = document.querySelector('#hover-img')
+  // console.log(hoverImg)
+
+  
+
+  // function handleMouseEnter(event) {
+  //   console.log('being hovered on')
+  //   event.target.innerText = 'instructions'
+  // }
+
+  // function handleMouseLeave(event){
+  //   console.log('Mouse has left')
+  //   event.target.src = 'https://fontmeme.com/permalink/210219/22423c902b9679464ed9cc5bc5c57822.png" alt="hover-image'
+  // }
+
+  // hoverImg.addEventListener('mouseenter', handleMouseEnter)
+  // hoverImg.addEventListener('mouseleave', handleMouseLeave)
+
 
   // START GAME
 
@@ -33,7 +52,7 @@ function init(){
     addFrodo(startPosition)
   }
 
-  createGrid(startPosition)
+    createGrid(startPosition)
 
   // ADD FRODO TO GRID
   function addFrodo(position) {
@@ -48,33 +67,15 @@ function init(){
 
   // then you can make the container width equal the box width times the number of boxes you want on that row, e.g 40 * 11 (make sure you’ve got ‘box-sizing: border-box;’ applied to the boxes as well so the width will include the borders!)
 
-
-  const hoverImg = document.querySelector('#how-to')
-  console.log(hoverImg)
-  
-
-  function handleMouseEnter(event) {
-    console.log('being hovered on')
-    event.target.src = 'https://fontmeme.com/permalink/210219/1e9e5bccb56715cd51fcb9b27cb3c36b.png'
-  }
-
-  function handleMouseLeave(event){
-    console.log('Mouse has left')
-    event.target.src = 'https://fontmeme.com/permalink/210219/22423c902b9679464ed9cc5bc5c57822.png'
-  }
-
-  hoverImg.addEventListener('mouseenter', handleMouseEnter)
-  hoverImg.addEventListener('mouseleave', handleMouseLeave)
-
-
-
   // START GAME
-  const startButton = document.querySelector('#begin')
+  const startButton = document.querySelector('.start-button')
  
   function startGame(){
 
+
     const startPosition = 104
-    let currentPosition = startPosition
+    console.log(startPosition)
+
 // REMOVE FRODO
   function removeFrodo(position){
     cells[position].classList.remove(frodoClass)
