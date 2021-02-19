@@ -72,6 +72,10 @@ function init(){
  
   function startGame(){
 
+
+    const startPosition = 104
+    console.log(startPosition)
+
 // REMOVE FRODO
   function removeFrodo(position){
     cells[position].classList.remove(frodoClass)
