@@ -2,12 +2,43 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: -100px;
     width: 20%;
 }
+* {
+    box-sizing: border-box;
+  }
 body{
     /* background-image: url(https://i.imgur.com/y0edu30.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 300px; */
+    height: 100vh;
     background-color: green;
 }
+.grid-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    height: 700px;
+    width: 1000px;
+  }
+  .grid div {
+    border: 1px solid lightgrey;
+    flex-grow: 1;
+    height: 11%;
+    width: 9%;
+  }.grid div.frodo {
+    background-image: url('https://i.imgur.com/W1yJEGy.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }

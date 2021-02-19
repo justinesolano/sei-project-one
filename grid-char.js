@@ -12,6 +12,7 @@
 
 // step 9: register the key events, add listener to the keys on key up & log event.keyCode in console to see the number
 // step 9: use if statement & log direction for each one dependant on which key is pressed
+
 // step 10: redefine cats position based on which key is chosen, add logic and console log catCurrentPosition afterwards.
 // step 11: actually add and remove the cat, we have a function to add but need one to remove
 // step 12: 1st we need to remove the cat from where ever it is, then check the keyCode and redefine the position, then add at the new position
@@ -48,6 +49,12 @@ function init() {
       console.log('CELL WE ARE PICKING USING THE POSITION INDEX BEING PASSED IN --->', cells[position])
       cells[position].classList.add(catClass) // use position as index to pick the corresponding div from the array of cells and add the class of cat
     }
+
+
+
+
+
+    
     // * Remove Cat from the grid
     function removeCat(position) {
       cells[position].classList.remove(catClass)
