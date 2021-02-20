@@ -54,6 +54,9 @@ function init(){
     cell.classList.add('river')
   })
 
+  const raft1 = document.createElement('div')
+  cells.slice(88,99).appendChild(raft1)
+
   const riverFinal = cells.slice(22, 33)
   riverFinal.forEach(cell => {
     cell.classList.add('river-final')
@@ -62,10 +65,11 @@ function init(){
   const tavern = cells[5]
   tavern.classList.add('tavern')
 
-  const raftOne = cells['89','91','93','95','97']
-  raftOne.forEach(cell => {
-    cell.classList.add('raft-one')
-  })
+//   const raftOne = cells.filter['89','91','93','95','97']
+//   raftOne.forEach(cell => {
+//     cell.classList.add('raft-one')
+//   })
+
 
   
   
