@@ -36,12 +36,26 @@ function init(){
 
   createGrid(startPosition)
 
+  // Textbook on array methods
+//   const array = ['mars', 'twix', 'curly wurly']
+//   array.forEach((element, index, array) => {
+//     console.log(element, index, array)
+//   })
+
   const river = cells.slice(88, 99)
   river.forEach(element => {
     element.classList.add('river')
   })
+  const riverFinal = cells.slice(22, 33)
+  riverFinal.forEach(element => {
+    element.classList.add('river-final')
+  })
 
+  const tavern = cells[5]
+  tavern.classList.add('tavern')
 
+  
+  
   // ADD FRODO TO GRID
   function addFrodo(position) {
     cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
