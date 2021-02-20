@@ -72,7 +72,7 @@ const raftMoves = setInterval(() => {
 
 }, 1500)
 
-document.addEventListener('DOMContentLoaded', startButton)
+  document.addEventListener('DOMContentLoaded', startButton)
 //   function movingRaft(){
 //     const raftStart = document.createElement('div')
     
