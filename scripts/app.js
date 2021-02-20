@@ -36,8 +36,11 @@ function init(){
 
   createGrid(startPosition)
 
-  const river = cells.slice(88, 98)
-  river.classList.add('river')
+  const river = cells.slice(88, 99)
+  river.forEach(element => {
+    element.classList.add('river')
+  })
+
 
   // ADD FRODO TO GRID
   function addFrodo(position) {
