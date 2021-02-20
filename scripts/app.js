@@ -18,7 +18,7 @@ function init(){
   const startPosition = 104
   console.log(startPosition)
   
-  let currentPosition = startPosition
+  let currentPosition = 104
 
 
   // GRID CREATION
@@ -41,18 +41,31 @@ function init(){
 //   array.forEach((element, index, array) => {
 //     console.log(element, index, array)
 //   })
+// ## .slice
+
+// This will return a subset or chunk of an array. This method creates a new array, leaving the original one intact.
+
+// const array = [100, 'Henry VIII', NaN, 'Sarah']
+// array.slice(1, 3) // ["Henry VIII", NaN]
+
 
   const river = cells.slice(88, 99)
-  river.forEach(element => {
-    element.classList.add('river')
+  river.forEach(cell => {
+    cell.classList.add('river')
   })
+
   const riverFinal = cells.slice(22, 33)
-  riverFinal.forEach(element => {
-    element.classList.add('river-final')
+  riverFinal.forEach(cell => {
+    cell.classList.add('river-final')
   })
 
   const tavern = cells[5]
   tavern.classList.add('tavern')
+
+  const raftOne = cells['89','91','93','95','97']
+  raftOne.forEach(cell => {
+    cell.classList.add('raft-one')
+  })
 
   
   
