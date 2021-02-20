@@ -14,6 +14,7 @@ function init(){
   const cellCount = width * length
   const cells = []
   const frodoClass = 'frodo'
+  
 
   const startPosition = 104
   console.log(startPosition)
@@ -50,12 +51,25 @@ function init(){
 
 
   const river = cells.slice(88, 99)
-  river.forEach(cell => {
-    cell.classList.add('river')
+  river.forEach(cells => {
+    cells.classList.add('river')
   })
 
-  const raft1 = document.createElement('div')
-  cells.slice(88,99).appendChild(raft1)
+//   const raft1 = document.createElement('div')
+//   river.appendChild(raft1)
+//   //   cells.slice(88,99).appendChild(raft1)
+
+
+//   const raft = 'raft-one'
+  const raftStart = 0
+  let currentRaftPosition = 0
+
+  function movingRaft(){
+    const raftStart = document.createElement('div')
+    raftStart.innerHTML = "<img src='https://i.imgur.com/821jTNx.png' class="raft-one">"
+    river.appendChild(raftStart)
+    cells[98].push(raftStart)
+  }
 
   const riverFinal = cells.slice(22, 33)
   riverFinal.forEach(cell => {
@@ -78,6 +92,9 @@ function init(){
     cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
   } 
   
+
+
+
 //   const frog = document.createElement('div')
 //   const lily = document.createElement('div')
 
