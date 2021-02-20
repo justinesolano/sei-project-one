@@ -48,7 +48,7 @@
 
 
     // how to move obstacles across the grid?
-
+        // add 
 
 
 

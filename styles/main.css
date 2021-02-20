@@ -39,6 +39,7 @@ body{
     flex-grow: 1;
     height: 11%;
     width: 9%;
+    background-color: rgb(0, 97, 40);
   }.grid div.frodo {
     background-image: url('https://i.imgur.com/VUBLpBp.png');
     background-repeat: no-repeat;
@@ -74,15 +75,15 @@ body{
   #how-to:hover .hover{
     visibility: visible;
   } */
-.grid div.river{
+.river{
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
     background-size: 100%;
 }
-.grid div.river-final{
+.river-final{
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
     background-size: 100%;
 }
-.grid div.tavern{
+.tavern{
     background-image: url('https://i.imgur.com/wYfsjWK.gif');
     background-size: 100%;
 }

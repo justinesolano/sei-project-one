@@ -60,16 +60,29 @@ function init(){
 //   //   cells.slice(88,99).appendChild(raft1)
 
 
-//   const raft = 'raft-one'
-  const raftStart = 0
-  let currentRaftPosition = 0
+  const raft = 'raft-one'
+//   const raftStart = 0
+//   let currentRaftPosition = 0
 
-  function movingRaft(){
-    const raftStart = document.createElement('div')
-    raftStart.innerHTML = "<img src='https://i.imgur.com/821jTNx.png' class="raft-one">"
-    river.appendChild(raftStart)
-    cells[98].push(raftStart)
+  function addRaft(position) {
+    cells[position].classList.add(raft) 
   }
+
+const raftMoves = setInterval(() => {
+
+}, 1500)
+
+document.addEventListener('DOMContentLoaded', startButton)
+//   function movingRaft(){
+//     const raftStart = document.createElement('div')
+    
+//     raftStart.innerHTML = "<img src='https://i.imgur.com/821jTNx.png' class="raft-one">"
+//     river.appendChild(raftStart)
+//     cells[98].push(raftStart)
+//   }
+
+
+
 
   const riverFinal = cells.slice(22, 33)
   riverFinal.forEach(cell => {
