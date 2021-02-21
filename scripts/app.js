@@ -72,21 +72,21 @@ function init(){
 }
 
 // MOVE FRODO
-  function movementKeys(event){
-    const key = event.keyCode
-    removeFrodo(currentPosition)
-    if (key === 39 && currentPosition % width !== width - 1){
-      currentPosition++
-    }
-    if (key === 37 && currentPosition % width !== 0){
-      currentPosition--
-    }
-    if (key === 38 && currentPosition >= width){
-      currentPosition -= width
-    }
-    if (key === 40 && currentPosition + width <= width * length - 1){
-      currentPosition += width
-    }
+    function movementKeys(event){
+      const key = event.keyCode
+      removeFrodo(currentPosition)
+      if (key === 39 && currentPosition % width !== width - 1){
+        currentPosition++
+      }
+      if (key === 37 && currentPosition % width !== 0){
+        currentPosition--
+      }
+      if (key === 38 && currentPosition >= width){
+        currentPosition -= width
+      }
+      if (key === 40 && currentPosition + width <= width * length - 1){
+        currentPosition += width
+      }
 
 
     addFrodo(currentPosition)
@@ -102,6 +102,23 @@ function init(){
     river.forEach(cells => {
       cells.classList.add('river')
     })
+
+    // ADD RAFT AS CHILD ELEMENT, SIMILAR TO CREATE GRID
+    const raft = document.createElement('div')
+
+    // appendChild to specific cell of river
+    cells[33].appendChild(raft)
+  
+
+
+    // function createGrid(startPosition) {
+    //     for (let i = 0; i < cellCount; i++) {
+    //       const cell = document.createElement('div')
+    //       cell.innerText = i
+    //       grid.appendChild(cell)
+    //       cells.push(cell)
+    //     }
+
   
     // const riverFinal = cells.slice(22, 33)
     // riverFinal.forEach(cell => {
