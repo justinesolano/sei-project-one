@@ -113,18 +113,19 @@ function init(){
   raft22.classList.add('raft22')
 
   const raft25 = cells[25]
-  raft25.classList.add('raft25')
+  raft25.classList.add('raft22')
 
   const raft28 = cells[28]
-  raft28.classList.add('raft28')
+  raft28.classList.add('raft22')
 
   const raft31 = cells[31]
-  raft31.classList.add('raft31')
+  raft31.classList.add('raft22')
 
 
   // RIVER
   const river23 = cells[23]
   river23.classList.add('river23')
+  console.log(river23)
 
   const river24 = cells[24]
   river24.classList.add('river24')
@@ -144,10 +145,14 @@ function init(){
   const river32 = cells[32]
   river32.classList.add('river32')
 
-  // ADD POSITION OF RAFTS AND RIVERS
-  
 
+//   const raftStartPoint = 
+//   // ADD POSITION OF RAFTS AND RIVERS
+//   function riverRaftFlow(){
+//     if ()
+//   }
 
+  // SET INTERVAL OF RAFTS AND RIVER MOVEMENT
 
 
   
