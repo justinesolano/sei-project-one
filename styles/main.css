@@ -9,7 +9,7 @@
     box-sizing: border-box;
   }
 body{
-    background-image: url(https://i.imgur.com/ycJu4jC.jpg);
+    background-image: url(https://i.imgur.com/lNqXEvO.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     /* height: 300px; */
@@ -39,7 +39,7 @@ body{
     flex-grow: 1;
     height: 10%;
     width: 9%;
-    background-color: rgb(0, 97, 40);
+    background-color: rgb(235, 201, 127);
   }
   .grid div.frodo {
     background-image: url('https://i.imgur.com/VUBLpBp.png');
@@ -48,48 +48,29 @@ body{
     cursor: pointer;
     display: block;
   }
-  /* .left-content {
-    display: flex;
-    flex-direction: column;
-    margin: 150px 100px 0px 0px;
-  } */
   .menu{
     padding: 15px 50px 15px 50px;
     display: flex;
     flex-direction: column;
     align-content: center;
     border: 1px;
-    /* margin: 50px 0px 0px -0px; */
   }
-  /* .how-to{
-      text-align: center;
-  } */
   #begin, #how-to, #reset{
-    /* margin: 100px 30px 100px 0px; */
     margin: 100px 50px 100px -200px;
   }
-/* 
-  #how-to .hover{
-    visibility: hidden;
-  }
-
-  #how-to:hover .hover{
-    visibility: visible;
-  } */
-.river{
+.river23, .river25, .river27, .river29, .river31 {
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
     background-size: 115%;
-
 }
-/* .river-final{
-    background-image: url('https://i.imgur.com/v6SsdE5.gif');
-    background-size: 100%;
-} */
 .tavern{
     background-image: url('https://i.imgur.com/wYfsjWK.gif');
     background-size: 100%;
 }
-.river .raft-one{
+/* .river .raft-one{
     background-image: url('https://i.imgur.com/821jTNx.png');
     background-size: 50%;
+} <---- this code is when I tried to appendChild to river element but the raft pciture would not appear on top of the river iamge  */
+.raft22{
+    background-image: url('https://i.imgur.com/AinjKeJ.png');
+    background-size: 90%;
 }
