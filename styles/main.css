@@ -58,7 +58,11 @@ body{
   #begin, #how-to, #reset{
     margin: 100px 50px 100px -200px;
   }
-.river23, .river25, .river27, .river29, .river31 {
+  .raft22{
+    background-image: url('https://i.imgur.com/lGUMAWY.gif');
+    background-size: 107%;
+}
+.river23, .river24, .river26, .river27, .river29, .river30, .river32 {
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
     background-size: 115%;
 }
@@ -70,7 +74,3 @@ body{
     background-image: url('https://i.imgur.com/821jTNx.png');
     background-size: 50%;
 } <---- this code is when I tried to appendChild to river element but the raft pciture would not appear on top of the river iamge  */
-.raft22, .raft24, .raft26, .raft28, .raft30, .raft32 {
-    background-image: url('https://i.imgur.com/lGUMAWY.gif');
-    background-size: 107%;
-}
