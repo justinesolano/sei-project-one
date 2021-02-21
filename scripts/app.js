@@ -97,47 +97,57 @@ function init(){
 
   createGrid(startPosition)
 
-  // ADD RIVER 
+  // ADD OBSTACLES ETC
 //   const river = cells.slice(22, 33)
 //   river.forEach(cells => {
 //     cells.classList.add('river')
 //   })  <--- version that did not work
+
+// TAVERN
   const tavern = cells[5]
   tavern.classList.add('tavern')
 
+
+  // RAFTS
   const raft22 = cells[22]
   raft22.classList.add('raft22')
 
-  const raft24 = cells[24]
-  raft24.classList.add('raft24')
-
-  const raft26 = cells[26]
-  raft26.classList.add('raft26')
+  const raft25 = cells[25]
+  raft25.classList.add('raft25')
 
   const raft28 = cells[28]
   raft28.classList.add('raft28')
 
-  const raft30 = cells[30]
-  raft30.classList.add('raft30')
+  const raft31 = cells[31]
+  raft31.classList.add('raft31')
 
-  const raft32 = cells[32]
-  raft32.classList.add('raft32')
 
+  // RIVER
   const river23 = cells[23]
   river23.classList.add('river23')
 
-  const river25 = cells[25]
-  river25.classList.add('river25')
+  const river24 = cells[24]
+  river24.classList.add('river24')
+
+  const river26 = cells[26]
+  river26.classList.add('river26')  
 
   const river27 = cells[27]
-  river27.classList.add('river27')  
+  river27.classList.add('river27')
 
   const river29 = cells[29]
   river29.classList.add('river29')
-
-  const river31 = cells[31]
-  river31.classList.add('river31')
   
+  const river30 = cells[30]
+  river30.classList.add('river30')
+
+  const river32 = cells[32]
+  river32.classList.add('river32')
+
+  // ADD POSITION OF RAFTS AND RIVERS
+  
+
+
 
 
   
