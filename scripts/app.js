@@ -1,11 +1,5 @@
 function init(){
 
-  // HOVER INSTRUCTIONS
-
-
-  // START GAME
-
-
 
   // VARIABLES
   const grid = document.querySelector('.grid')
@@ -37,6 +31,13 @@ function init(){
     cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
   } 
   
+  // ADD RIVER
+  const river = cells.slice(22, 33)
+  river.forEach(cells => {
+    cells.classList.add('river')
+  })
+
+
 
 // HOVER INSTRUCTIONS
   const hoverImg = document.querySelector('#how-to')
@@ -55,6 +56,14 @@ function init(){
 
   hoverImg.addEventListener('mouseenter', handleMouseEnter)
   hoverImg.addEventListener('mouseleave', handleMouseLeave)
+
+// RESTART FUNCTION
+
+  const restart = document.getElementById('reset')
+  function resetGame(){
+    cells[position].classList.remove(frodoClass)
+    cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
+  }
 
   // START GAME
   const startButton = document.querySelector('#begin')

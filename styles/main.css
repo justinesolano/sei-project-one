@@ -37,7 +37,7 @@ body{
   .grid div {
     /* border: 1px solid lightgrey; */
     flex-grow: 1;
-    height: 11%;
+    height: 13%;
     width: 9%;
     background-color: rgb(0, 97, 40);
   }.grid div.frodo {
