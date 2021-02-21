@@ -77,12 +77,12 @@ body{
   } */
 .river{
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
-    background-size: 100%;
+    background-size: 115%;
 }
-.river-final{
+/* .river-final{
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
     background-size: 100%;
-}
+} */
 .tavern{
     background-image: url('https://i.imgur.com/wYfsjWK.gif');
     background-size: 100%;
