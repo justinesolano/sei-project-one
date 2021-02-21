@@ -98,10 +98,10 @@ function init(){
 
 
     // ADD RIVER
-    const river = cells.slice(22, 33)
-    river.forEach(cells => {
-      cells.classList.add('river')
-    })
+    // const river = cells.[22, 24, 26, 28, 30, 32]
+    // river.forEach(cells => {
+    //   cells.classList.add('river')
+    // })
 
     // ADD RAFT AS CHILD ELEMENT, SIMILAR TO CREATE GRID
     const raft = document.createElement('div')
