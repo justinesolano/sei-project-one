@@ -89,27 +89,29 @@ function init(){
       }
 
 
-    addFrodo(currentPosition)
+      addFrodo(currentPosition)
 
-  }   
-  document.addEventListener('keydown', movementKeys) 
+    } 
+    document.addEventListener('keydown', movementKeys) 
 }
+
   createGrid(startPosition)
 
+  // ADD RIVER
+  const river = cells.slice(22, 33)
+  river.forEach(cells => {
+    cells.classList.add('river')
+  })
 
-    // ADD RIVER
-    // const river = cells.[22, 24, 26, 28, 30, 32]
-    // river.forEach(cells => {
-    //   cells.classList.add('river')
-    // })
+  const tavern = cells[5]
+  tavern.classList.add('tavern')
 
-    // ADD RAFT AS CHILD ELEMENT, SIMILAR TO CREATE GRID
-    const raft = document.createElement('div')
 
-    // appendChild to specific cell of river
-    cells[33].appendChild(raft)
-  
-
+    // const raft = document.createElement('div')
+    // // appendChild to specific cell of river
+    // cells[33].appendChild(raft)
+    // cells[33].classList.add('raft')
+    // // ADD RAFT AS CHILD ELEMENT, SIMILAR TO CREATE GRID
 
     // function createGrid(startPosition) {
     //     for (let i = 0; i < cellCount; i++) {
@@ -125,8 +127,6 @@ function init(){
     //   cell.classList.add('river-final')
     // })
   
-    const tavern = cells[5]
-    tavern.classList.add('tavern')
 
 
   startButton.addEventListener('click', startGame)
