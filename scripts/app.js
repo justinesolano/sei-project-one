@@ -97,14 +97,50 @@ function init(){
 
   createGrid(startPosition)
 
-  // ADD RIVER
-  const river = cells.slice(22, 33)
-  river.forEach(cells => {
-    cells.classList.add('river')
-  })
-
+  // ADD RIVER 
+//   const river = cells.slice(22, 33)
+//   river.forEach(cells => {
+//     cells.classList.add('river')
+//   })  <--- version that did not work
   const tavern = cells[5]
   tavern.classList.add('tavern')
+
+  const raft22 = cells[22]
+  raft22.classList.add('raft22')
+
+  const raft24 = cells[24]
+  raft24.classList.add('raft24')
+
+  const raft26 = cells[26]
+  raft26.classList.add('raft26')
+
+  const raft28 = cells[28]
+  raft28.classList.add('raft28')
+
+  const raft30 = cells[30]
+  raft30.classList.add('raft30')
+
+  const raft32 = cells[32]
+  raft32.classList.add('raft32')
+
+  const river23 = cells[23]
+  river23.classList.add('river23')
+
+  const river25 = cells[25]
+  river25.classList.add('river25')
+
+  const river27 = cells[27]
+  river27.classList.add('river27')  
+
+  const river29 = cells[29]
+  river29.classList.add('river29')
+
+  const river31 = cells[31]
+  river31.classList.add('river31')
+  
+
+
+  
 
 
     // const raft = document.createElement('div')
