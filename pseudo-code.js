@@ -48,7 +48,10 @@
 
 
     // how to move obstacles across the grid?
-        // add 
+        // add raft div child element to river using appendChild
+        // declare the child element in css and add logs, try the position: absolute or relative technique
+        // add a function that adds raft to a river cell in a loop
+        // make a function that says if currentPosition is equal to a raft in the river then frodo will move along with the raft and if frodo is on the river then he will die
 
 
 

@@ -9,17 +9,16 @@ function init(){
 
   // VARIABLES
   const grid = document.querySelector('.grid')
-  const length = 10
+  const length = 8
   const width = 11
   const cellCount = width * length
   const cells = []
   const frodoClass = 'frodo'
   
 
-  const startPosition = 104
-  console.log(startPosition)
+  const startPosition = 82
   
-  let currentPosition = 104
+//   let currentPosition = 82
 
 
   // GRID CREATION
@@ -29,76 +28,9 @@ function init(){
       cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
-    //   cell.classList.add([i]) // adding class to each cell div to access single cell and put bg image such as water or boat
-      //   const rowColumns = document.querySelector('.grid div')
     }
     addFrodo(startPosition)
   }
-
-  createGrid(startPosition)
-
-  // Textbook on array methods
-//   const array = ['mars', 'twix', 'curly wurly']
-//   array.forEach((element, index, array) => {
-//     console.log(element, index, array)
-//   })
-// ## .slice
-
-// This will return a subset or chunk of an array. This method creates a new array, leaving the original one intact.
-
-// const array = [100, 'Henry VIII', NaN, 'Sarah']
-// array.slice(1, 3) // ["Henry VIII", NaN]
-
-
-  const river = cells.slice(88, 99)
-  river.forEach(cells => {
-    cells.classList.add('river')
-  })
-
-//   const raft1 = document.createElement('div')
-//   river.appendChild(raft1)
-//   //   cells.slice(88,99).appendChild(raft1)
-
-
-  const raft = 'raft-one'
-//   const raftStart = 0
-//   let currentRaftPosition = 0
-
-  function addRaft(position) {
-    cells[position].classList.add(raft) 
-  }
-
-const raftMoves = setInterval(() => {
-
-}, 1500)
-
-  document.addEventListener('DOMContentLoaded', startButton)
-//   function movingRaft(){
-//     const raftStart = document.createElement('div')
-    
-//     raftStart.innerHTML = "<img src='https://i.imgur.com/821jTNx.png' class="raft-one">"
-//     river.appendChild(raftStart)
-//     cells[98].push(raftStart)
-//   }
-
-
-
-
-  const riverFinal = cells.slice(22, 33)
-  riverFinal.forEach(cell => {
-    cell.classList.add('river-final')
-  })
-
-  const tavern = cells[5]
-  tavern.classList.add('tavern')
-
-//   const raftOne = cells.filter['89','91','93','95','97']
-//   raftOne.forEach(cell => {
-//     cell.classList.add('raft-one')
-//   })
-
-
-  
   
   // ADD FRODO TO GRID
   function addFrodo(position) {
@@ -106,27 +38,7 @@ const raftMoves = setInterval(() => {
   } 
   
 
-
-
-//   const frog = document.createElement('div')
-//   const lily = document.createElement('div')
-
-//   cells[cells.length - 1].appendChild(frog)
-//   frog.classList.add('frog')
-//   cells[0].appendChild(lily)
-//   lily.classList.add('lily')
-
-
-
-  //   function hideText()
-  //   {
-  //       cells.innerText = ''
-  //   }
-  // console.log(cells)
-
-  // then you can make the container width equal the box width times the number of boxes you want on that row, e.g 40 * 11 (make sure you’ve got ‘box-sizing: border-box;’ applied to the boxes as well so the width will include the borders!)
-
-
+// HOVER INSTRUCTIONS
   const hoverImg = document.querySelector('#how-to')
   console.log(hoverImg)
   
@@ -149,7 +61,7 @@ const raftMoves = setInterval(() => {
  
   function startGame(){
 
-    const startPosition = 104
+    const startPosition = 82
     let currentPosition = startPosition
 // REMOVE FRODO
   function removeFrodo(position){
@@ -179,13 +91,12 @@ const raftMoves = setInterval(() => {
   }   
   document.addEventListener('keydown', movementKeys) 
 }
+  createGrid(startPosition)
 
 
   startButton.addEventListener('click', startGame)
 
 
-
-// EVENT LISTENERS
 
 
  
@@ -195,4 +106,3 @@ const raftMoves = setInterval(() => {
 window.addEventListener('DOMContentLoaded', init)
 
 
-// 
