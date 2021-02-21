@@ -31,13 +31,6 @@ function init(){
     cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
   } 
   
-  // ADD RIVER
-  const river = cells.slice(22, 33)
-  river.forEach(cells => {
-    cells.classList.add('river')
-  })
-
-
 
 // HOVER INSTRUCTIONS
   const hoverImg = document.querySelector('#how-to')
@@ -59,11 +52,12 @@ function init(){
 
 // RESTART FUNCTION
 
-  const restart = document.getElementById('reset')
-  function resetGame(){
-    cells[position].classList.remove(frodoClass)
-    cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
-  }
+//   const restart = document.getElementById('reset')
+//   function resetGame(){
+//     cells[position].classList.remove(frodoClass)
+//     cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
+//   }
+
 
   // START GAME
   const startButton = document.querySelector('#begin')
@@ -101,6 +95,21 @@ function init(){
   document.addEventListener('keydown', movementKeys) 
 }
   createGrid(startPosition)
+
+
+    // ADD RIVER
+    const river = cells.slice(22, 33)
+    river.forEach(cells => {
+      cells.classList.add('river')
+    })
+  
+    // const riverFinal = cells.slice(22, 33)
+    // riverFinal.forEach(cell => {
+    //   cell.classList.add('river-final')
+    // })
+  
+    const tavern = cells[5]
+    tavern.classList.add('tavern')
 
 
   startButton.addEventListener('click', startGame)
