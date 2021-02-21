@@ -77,7 +77,8 @@ body{
   } */
 .river{
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
-    background-size: 115%;
+    background-size: 115px;
+
 }
 /* .river-final{
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
@@ -87,7 +88,7 @@ body{
     background-image: url('https://i.imgur.com/wYfsjWK.gif');
     background-size: 100%;
 }
-.grid div.raft-one{
-    content: url('https://i.imgur.com/821jTNx.png');
-    background-size: 100%;
+.river .raft-one{
+    background-image: url('https://i.imgur.com/821jTNx.png');
+    background-size: 50%;
 }
