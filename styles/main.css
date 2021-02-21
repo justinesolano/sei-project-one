@@ -37,10 +37,11 @@ body{
   .grid div {
     /* border: 1px solid lightgrey; */
     flex-grow: 1;
-    height: 13%;
+    height: 10%;
     width: 9%;
     background-color: rgb(0, 97, 40);
-  }.grid div.frodo {
+  }
+  .grid div.frodo {
     background-image: url('https://i.imgur.com/VUBLpBp.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -77,7 +78,7 @@ body{
   } */
 .river{
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
-    background-size: 115px;
+    background-size: 115%;
 
 }
 /* .river-final{
