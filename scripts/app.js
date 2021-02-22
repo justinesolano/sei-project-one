@@ -46,7 +46,7 @@ function init(){
 
   function handleMouseLeave(event){
     console.log('Mouse has left')
-    event.target.src = 'https://fontmeme.com/permalink/210219/22423c902b9679464ed9cc5bc5c57822.png'
+    event.target.src = 'https://i.imgur.com/LsUHlrM.png'
   }
 
   hoverImg.addEventListener('mouseenter', handleMouseEnter)
@@ -145,6 +145,12 @@ function init(){
 //     currentPosition.push(element)
 //   })
 
+const raft = []
+  {
+    const river = cells[i]
+    river.classList.add('river')
+    riverElements.push(river)
+  }
 
 
 
@@ -171,6 +177,9 @@ setInterval(() => {
     })
     currentPosition.forEach(item => {
         addRaft(item)
+    if (currentPosition === 32){
+        currentPosition -= 10
+    }
     })
 }, 1000)
 // middle - simple every second in timer remove log and add to next one on a timer add 10, remove ,add,c ounter, conditional
