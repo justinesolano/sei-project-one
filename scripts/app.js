@@ -122,10 +122,10 @@ function init(){
 //   raft22.classList.add('raft22')
 
 
-  const raft25 = cells[25]
-  raft25.classList.add('raft25')
-  console.log(raft25)
-  document.querySelector('.raft25').style.zIndex = '0'
+//   const raft25 = cells[25]
+//   raft25.classList.add('raft25')
+//   console.log(raft25)
+//   document.querySelector('.raft25').style.zIndex = '0'
 //   const raft28 = cells[28]
 //   raft28.classList.add('raft28')
 
@@ -134,73 +134,48 @@ function init(){
 
 
   // RIVER
+const riverElements = []
+for (let i = 22; i <= 32; i++) {
+    const river = cells[i]
+    river.classList.add('river')
+    riverElements.push(river)
+}
 
-  const river22 = cells[22]
-  river22.classList.add('river22')
-  //
+    const raft = cells[23, 26, 29, 32]
+    raft.classList.add('raft')
+    cells.push(raft)
 
-  const river23 = cells[23]
-  river23.classList.add('river23')
-  console.log(river23)
 
-  const river24 = cells[24]
-  river24.classList.add('river24')
 
-  const river26 = cells[26]
-  river26.classList.add('river26')  
-
-  const river27 = cells[27]
-  river27.classList.add('river27')
-  // 
-
-  const river28 = cells[28]
-  river28.classList.add('river28')
-  //
-
-  const river29 = cells[29]
-  river29.classList.add('river29')
-  
-  const river30 = cells[30]
-  river30.classList.add('river30')
-
-  //
-  const river31 = cells[31]
-  river31.classList.add('river31')
-  //
-
-  const river32 = cells[32]
-  river32.classList.add('river32')
-
-  const addRafts = 'raft25'
-  let raftCurrent = 0
-  let raftStartPoint
+//   let raftCurrent = 0
+//   let raftStartPoint
 
   // ADD POSITION OF RAFTS AND RIVERS
 
-  function addRaft(position){
-    cells[position].classList.add(addRafts)
-}
-
-  function removeRaft(position){
-    cells[position].classList.remove(addRafts)
+  function addRaft(riverElements){
+    riverElements.classList.add(addRafts)
 }
 
 
+  function removeRaft(riverElements){
+    riverElements.classList.remove(addRafts)
+}
+
+setInterval(() => {
+    riverElements.forEach(element => {
+        removeRaft(element)
+    })
+    currentPosition = currentPosition.map(element => {
+        return element + 1
+    })
+    currentPosition.forEach(item => {
+        addRaft(item)
+    })
+}, 1000)
 // middle - simple every second in timer remove log and add to next one on a timer add 10, remove ,add,c ounter, conditional
-  function riverRaftFlow(){
-    setInterval(() => {
-      addRaft(raftCurrent)
-      console.log('im here')
-    }, 1000)
-    // removeRaft(raftCurrent)
-    // if (raftCurrent === 25){
-    //   raftCurrent++
-    // }
 
-    // addRaft(raftCurrent)
-  }
 
-  startButton.addEventListener('click', riverRaftFlow)
+  startButton.addEventListener('click', riverElements)
 
 
 //   function addRaft(position) { // takes argument so function is reusable
