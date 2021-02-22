@@ -9,7 +9,7 @@
     box-sizing: border-box;
   }
 body{
-    background-image: url(https://i.imgur.com/lNqXEvO.jpg);
+    background-image: url('https://i.imgur.com/lNqXEvO.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     /* height: 300px; */
@@ -18,6 +18,37 @@ body{
 .main{
     display: flex;
     justify-content: center;
+}
+  .grid div.frodo {
+    background-image: url('https://i.imgur.com/VUBLpBp.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    /* display: block; */
+    z-index: 2;
+  }
+  .menu{
+    padding: 15px 50px 15px 50px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: 1px;
+  }
+  #begin, #how-to, #reset{
+    margin: 100px 50px 100px -200px;
+  }
+  .raft22, .raft25, .raft28, .raft31{
+    background-image: url('https://i.imgur.com/lGUMAWY.gif');
+    background-size: 107%;
+    /* z-index: 0; */
+}
+.river23, .river24, .river26, .river27, .river29, .river30, .river32, .river22, .river25, .river28, .river31 {
+    background-image: url('https://i.imgur.com/v6SsdE5.gif');
+    background-size: 115%;
+}
+.tavern{
+    background-image: url('https://i.imgur.com/wYfsjWK.gif');
+    background-size: 100%;
 }
 .grid-wrapper{
     height: 100vh;
@@ -40,40 +71,8 @@ body{
     height: 10%;
     width: 9%;
     z-index: -2;
-    background-color: rgb(235, 201, 127);
+    /* background-color: rgb(235, 201, 127); */
   }
-  .grid div.frodo {
-    background-image: url('https://i.imgur.com/VUBLpBp.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    cursor: pointer;
-    /* display: block; */
-    z-index: 2;
-  }
-  .menu{
-    padding: 15px 50px 15px 50px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    border: 1px;
-  }
-  #begin, #how-to, #reset{
-    margin: 100px 50px 100px -200px;
-  }
-  .raft22, .raft25, .raft28, .raft31{
-    background-image: url('https://i.imgur.com/lGUMAWY.gif');
-    background-size: 107%;
-    position: relative;
-    /* z-index: 0; */
-}
-.river23, .river24, .river26, .river27, .river29, .river30, .river32, .river22, .river25, .river28, .river31 {
-    background-image: url('https://i.imgur.com/v6SsdE5.gif');
-    background-size: 115%;
-}
-.tavern{
-    background-image: url('https://i.imgur.com/wYfsjWK.gif');
-    background-size: 100%;
-}
 /* .river .raft-one{
     background-image: url('https://i.imgur.com/821jTNx.png');
     background-size: 50%;
