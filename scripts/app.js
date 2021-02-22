@@ -24,11 +24,13 @@ function init(){
       cells.push(cell)
     }
     addFrodo(startPosition)
+
   }
   
   // ADD FRODO TO GRID
   function addFrodo(position) {
     cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
+    document.querySelector('.frodo').style.zIndex = '1'
   } 
   
 
@@ -50,6 +52,8 @@ function init(){
   hoverImg.addEventListener('mouseenter', handleMouseEnter)
   hoverImg.addEventListener('mouseleave', handleMouseLeave)
 
+// middle - simple every second in timer remove log and add to next one on a timer add 10, remove ,add,c ounter, conditional
+
 // RESTART FUNCTION
 
 //   const restart = document.getElementById('reset')
@@ -67,9 +71,9 @@ function init(){
     const startPosition = 82
     let currentPosition = startPosition
 // REMOVE FRODO
-  function removeFrodo(position){
-    cells[position].classList.remove(frodoClass)
-}
+    function removeFrodo(position){
+      cells[position].classList.remove(frodoClass)
+    }
 
 // MOVE FRODO
     function movementKeys(event){
@@ -90,13 +94,17 @@ function init(){
 
 
       addFrodo(currentPosition)
-
     } 
     document.addEventListener('keydown', movementKeys) 
 }
 
   createGrid(startPosition)
 
+
+//   const img = document.createElement('img')
+// img.src = 'https://i.imgur.com/VUBLpBp.png' 
+// const src = document.querySelector('.frodo') 
+// src.appendChild(img)
   // ADD OBSTACLES ETC
 //   const river = cells.slice(22, 33)
 //   river.forEach(cells => {
@@ -109,21 +117,27 @@ function init(){
 
 
   // RAFTS
-  const raft22 = cells[22]
-  raft22.classList.add('raft22')
+//   const raft22 = cells[22]
+//   raft22.classList.add('raft22')
 
 
   const raft25 = cells[25]
   raft25.classList.add('raft25')
+  console.log(raft25)
+  document.querySelector('.raft25').style.zIndex = '0'
+//   const raft28 = cells[28]
+//   raft28.classList.add('raft28')
 
-  const raft28 = cells[28]
-  raft28.classList.add('raft28')
-
-  const raft31 = cells[31]
-  raft31.classList.add('raft31')
+//   const raft31 = cells[31]
+//   raft31.classList.add('raft31')
 
 
   // RIVER
+
+  const river22 = cells[22]
+  river22.classList.add('river22')
+  //
+
   const river23 = cells[23]
   river23.classList.add('river23')
   console.log(river23)
@@ -136,6 +150,11 @@ function init(){
 
   const river27 = cells[27]
   river27.classList.add('river27')
+  // 
+
+  const river28 = cells[28]
+  river28.classList.add('river28')
+  //
 
   const river29 = cells[29]
   river29.classList.add('river29')
@@ -143,19 +162,40 @@ function init(){
   const river30 = cells[30]
   river30.classList.add('river30')
 
+  //
+  const river31 = cells[31]
+  river31.classList.add('river31')
+  //
+
   const river32 = cells[32]
   river32.classList.add('river32')
 
-  const addRafts = 'raft22'
-  let raftStartPoint = 0
+  const addRafts = 'raft25'
+  const raftCurrent = 25
+  let raftStartPoint = 25
+
   // ADD POSITION OF RAFTS AND RIVERS
-  function riverRaftFlow(){
-    if (raftStartPoint % width !== 0){
+
+  function addRaft(position){
+    cells[position].classList.add(addRafts)
+}
+
+  function removeRaft(raftStartPoint){
+    cells[raftStartPoint].classList.remove(raft25)
+}
+
+
+  function riverRaftFlow(raftStartPoint){
+    removeRaft(raftStartPoint)
+    if (raftStartPoint === 25 && raftStartPoint > 22 ){
       raftStartPoint--
+      raftStartPoint + 10
     }
-    addRafts(raftStartPoint)
+    addRaft(raftStartPoint)
+    removeRaft(raftStartPoint)
   }
 
+  startButton.addEventListener('click', riverRaftFlow)
 
 //   function addRaft(position) { // takes argument so function is reusable
 //     cells[position].classList.add('.raft22') 
