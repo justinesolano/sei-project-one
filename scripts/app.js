@@ -8,6 +8,7 @@ function init(){
   const cellCount = width * length
   const cells = []
   const frodoClass = 'frodo'
+  let currentPosition = []
   
 
   const startPosition = 82
@@ -171,8 +172,8 @@ function init(){
   river32.classList.add('river32')
 
   const addRafts = 'raft25'
-  const raftCurrent = 25
-  let raftStartPoint = 25
+  let raftCurrent = 0
+  let raftStartPoint
 
   // ADD POSITION OF RAFTS AND RIVERS
 
@@ -180,22 +181,27 @@ function init(){
     cells[position].classList.add(addRafts)
 }
 
-  function removeRaft(raftStartPoint){
-    cells[raftStartPoint].classList.remove(raft25)
+  function removeRaft(position){
+    cells[position].classList.remove(addRafts)
 }
 
 
-  function riverRaftFlow(raftStartPoint){
-    removeRaft(raftStartPoint)
-    if (raftStartPoint === 25 && raftStartPoint > 22 ){
-      raftStartPoint--
-      raftStartPoint + 10
-    }
-    addRaft(raftStartPoint)
-    removeRaft(raftStartPoint)
+// middle - simple every second in timer remove log and add to next one on a timer add 10, remove ,add,c ounter, conditional
+  function riverRaftFlow(){
+    setInterval(() => {
+      addRaft(raftCurrent)
+      console.log('im here')
+    }, 1000)
+    // removeRaft(raftCurrent)
+    // if (raftCurrent === 25){
+    //   raftCurrent++
+    // }
+
+    // addRaft(raftCurrent)
   }
 
   startButton.addEventListener('click', riverRaftFlow)
+
 
 //   function addRaft(position) { // takes argument so function is reusable
 //     cells[position].classList.add('.raft22') 
