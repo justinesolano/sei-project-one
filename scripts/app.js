@@ -9,7 +9,6 @@ function init(){
   const cells = []
   const frodoClass = 'frodo'
   let currentPosition = []
-  
 
   const startPosition = 82
   
@@ -31,7 +30,7 @@ function init(){
   // ADD FRODO TO GRID
   function addFrodo(position) {
     cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
-    document.querySelector('.frodo').style.zIndex = '1'
+    // document.querySelector('.frodo').style.zIndex = '1'
   } 
   
 
@@ -134,16 +133,18 @@ function init(){
 
 
   // RIVER
-const riverElements = []
-for (let i = 22; i <= 32; i++) {
+  const riverElements = []
+  for (let i = 22; i <= 32; i++) {
     const river = cells[i]
     river.classList.add('river')
     riverElements.push(river)
-}
+  }
+//   const rafts = [23, 26, 29, 32]
+//   cells.forEach(element => {
+//     rafts.classList.add('raft')
+//     currentPosition.push(element)
+//   })
 
-    const raft = cells[23, 26, 29, 32]
-    raft.classList.add('raft')
-    cells.push(raft)
 
 
 
@@ -153,12 +154,12 @@ for (let i = 22; i <= 32; i++) {
   // ADD POSITION OF RAFTS AND RIVERS
 
   function addRaft(riverElements){
-    riverElements.classList.add(addRafts)
+    riverElements.classList.add(raft)
 }
 
 
   function removeRaft(riverElements){
-    riverElements.classList.remove(addRafts)
+    riverElements.classList.remove(raft)
 }
 
 setInterval(() => {

@@ -40,11 +40,19 @@ body{
 .river{
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
     background-size: 115%;
+    z-index: 0;
 }
-.raft{
+.river .frodo{
+    background-image: url('https://i.imgur.com/VUBLpBp.png');
+    background-image: url('https://i.imgur.com/v6SsdE5.gif');
+    background-size: 115%;
+    z-index: 1;
+}
+.raft .frodo {
+    background-image: url('https://i.imgur.com/VUBLpBp.png');
     background-image: url('https://i.imgur.com/lGUMAWY.gif');
     background-size: 107%;
-    /* z-index: 0; */
+    z-index: 2;
 }
 .tavern{
     background-image: url('https://i.imgur.com/wYfsjWK.gif');
