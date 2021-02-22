@@ -37,14 +37,14 @@ body{
   #begin, #how-to, #reset{
     margin: 100px 50px 100px -200px;
   }
-  .raft22, .raft25, .raft28, .raft31{
+.river{
+    background-image: url('https://i.imgur.com/v6SsdE5.gif');
+    background-size: 115%;
+}
+.raft{
     background-image: url('https://i.imgur.com/lGUMAWY.gif');
     background-size: 107%;
     /* z-index: 0; */
-}
-.river23, .river24, .river26, .river27, .river29, .river30, .river32, .river22, .river25, .river28, .river31 {
-    background-image: url('https://i.imgur.com/v6SsdE5.gif');
-    background-size: 115%;
 }
 .tavern{
     background-image: url('https://i.imgur.com/wYfsjWK.gif');
