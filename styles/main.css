@@ -61,9 +61,9 @@ body{
     z-index: 2;
     position: relative;
 }
-.rafts {
+.raft {
     background-image: url('https://i.imgur.com/lGUMAWY.gif');
-    background-size: 107%;
+    background-size: 100%;
     z-index: 2;
 }
 .tavern{
