@@ -139,20 +139,19 @@ function init(){
     river.classList.add('river')
     riverElements.push(river)
   }
+  const rafts = cells['23', '26', '29', '32']
+  cells.forEach(index => {
+    console.log(index)
+    index.classList.add('raft')
+    cells.push(index)
+  })
+
 //   const rafts = [23, 26, 29, 32]
-//   cells.forEach(element => {
-//     rafts.classList.add('raft')
-//     currentPosition.push(element)
-//   })
-
-const raft = []
-  {
-    const river = cells[i]
-    river.classList.add('river')
-    riverElements.push(river)
-  }
-
-
+//   {
+//     // const rafts = cells[25]
+//     rafts.forEach.classList.add('raft')
+//     rafts.push
+//   }
 
 //   let raftCurrent = 0
 //   let raftStartPoint
@@ -160,29 +159,29 @@ const raft = []
   // ADD POSITION OF RAFTS AND RIVERS
 
   function addRaft(riverElements){
-    riverElements.classList.add(raft)
-}
+    riverElements.classList.add(rafts)
+  }
 
 
   function removeRaft(riverElements){
-    riverElements.classList.remove(raft)
-}
+    riverElements.classList.remove(rafts)
+  }
 
-setInterval(() => {
+  setInterval(() => {
     riverElements.forEach(element => {
-        removeRaft(element)
+      removeRaft(element)
     })
     currentPosition = currentPosition.map(element => {
-        return element + 1
+      return element + 1
     })
     currentPosition.forEach(item => {
-        addRaft(item)
-    if (currentPosition === 32){
+      addRaft(item)
+      if (currentPosition === 32){
         currentPosition -= 10
-    }
+      }
     })
-}, 1000)
-// middle - simple every second in timer remove log and add to next one on a timer add 10, remove ,add,c ounter, conditional
+  }, 1000)
+  // middle - simple every second in timer remove log and add to next one on a timer add 10, remove ,add,c ounter, conditional
 
 
   startButton.addEventListener('click', riverElements)
