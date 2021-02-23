@@ -12,9 +12,6 @@ function init(){
   let direction = 'right'
 
   const startPosition = 82
-  
-//   let currentPosition = 82
-
 
   // GRID CREATION
   function createGrid(startPosition) {
@@ -30,8 +27,7 @@ function init(){
   
   // ADD FRODO TO GRID
   function addFrodo(position) {
-    cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
-    // document.querySelector('.frodo').style.zIndex = '1'
+    cells[position].classList.add(frodoClass) 
   } 
   
 
@@ -52,16 +48,6 @@ function init(){
 
   hoverImg.addEventListener('mouseenter', handleMouseEnter)
   hoverImg.addEventListener('mouseleave', handleMouseLeave)
-
-// middle - simple every second in timer remove log and add to next one on a timer add 10, remove ,add,c ounter, conditional
-
-// RESTART FUNCTION
-
-//   const restart = document.getElementById('reset')
-//   function resetGame(){
-//     cells[position].classList.remove(frodoClass)
-//     cells[position].classList.add(frodoClass) // this adds the frodoClass of 'frodo' to the cells position by adding frodo to grid div so this is where Frodo will show up
-//   }
 
 
   // START GAME
@@ -100,10 +86,13 @@ function init(){
 }
 
   createGrid(startPosition)
-
+                                    // ASSETS
 // TAVERN
   const tavern = cells[5]
   tavern.classList.add('tavern')
+
+
+
 
   // RIVER -> 22-32
   const riverElements = []
@@ -112,13 +101,36 @@ function init(){
     river.classList.add('river')
     riverElements.push(river)
   }
+
+
+  // RAFTS
   let rafts = [23, 26, 29, 32]
   rafts.forEach(index => {
     console.log(cells[index])
     cells[index].classList.add('raft')
   })
 
-  // ADD POSITION OF RAFTS AND RIVERS
+//   const roadOne = [66, 68, 70, 72, 74, 76]
+//   roadOne.forEach(index => {
+//     cells[index].classList.add('road-one')
+//   })
+
+// ROAD -> 66-76
+  const roadElements = []
+  for (let i = 66; i <= 76; i++) {
+    const roadOne = cells[i]
+    roadOne.classList.add('road-one')
+    roadElements.push(roadOne)
+  }
+
+  // NAZGUL 
+  let blackRiders = [66, 69, 72, 75]
+  blackRiders.forEach(index => {
+    console.log(cells[index])
+    cells[index].classList.add('black-riders')
+  })
+
+  // ADD POSITION OF ASSETS
   function addRaft(element){
     cells[element].classList.add('raft')
     // riverElements.classList.add('raft')
@@ -161,7 +173,7 @@ function init(){
       }
     })
   }, 1000)
-  // middle - simple every second in timer remove log and add to next one on a timer add 10, remove ,add,c ounter, conditional
+  // middle - simple every second in timer remove log and add to next one on a timer add 10, remove ,add, counter, conditional
 
 
   startButton.addEventListener('click', riverElements)
