@@ -175,15 +175,14 @@ function init(){
     // if any of the rafts array are on right hand side column, change dir to left
     // if any raft array are on left column, change to right
     if (rafts.some(element => {
-      return element % width !== width - 1
+      console.log((element + 1) % width === 0)
+      return (element + 1) % width === 0
     })){
       direction = 'left'
       console.log('left')
     } else if (rafts.some(element => {
-      console.log(element % width !== 0)
-      return element - 1 % width !== width - 1
+      return element % width === 0
     })){
-
       direction = 'right'
       console.log('right')
     }
