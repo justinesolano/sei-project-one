@@ -29,15 +29,24 @@ body{
     z-index: 3;
   }
   .menu{
-    padding: 15px 50px 15px 50px;
+    padding: 0px 0px 15px 0px;
     display: flex;
     flex-direction: column;
     align-content: center;
     border: 1px;
   }
   #begin, #how-to, #reset{
-    margin: 100px 50px 100px -200px;
-
+    width: 90px;
+    margin: 100px 50px 10px -200px;
+  }
+  #begin{
+    margin: 120px 70px 0px 0px;
+  }
+  #how-to{
+    margin: 120px 70px 0px 0px;
+  }
+  #reset{
+    margin: 120px 70px 0px 0px; 
   }
 .river{
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
@@ -52,12 +61,10 @@ body{
     z-index: 2;
     position: relative;
 }
-.raft .frodo {
-    background-image: url('https://i.imgur.com/VUBLpBp.png');
+.rafts {
     background-image: url('https://i.imgur.com/lGUMAWY.gif');
     background-size: 107%;
     z-index: 2;
-    position: relative;
 }
 .tavern{
     background-image: url('https://i.imgur.com/wYfsjWK.gif');
