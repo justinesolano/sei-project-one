@@ -116,23 +116,6 @@ function init(){
   const tavern = cells[5]
   tavern.classList.add('tavern')
 
-
-  // RAFTS
-//   const raft22 = cells[22]
-//   raft22.classList.add('raft22')
-
-
-//   const raft25 = cells[25]
-//   raft25.classList.add('raft25')
-//   console.log(raft25)
-//   document.querySelector('.raft25').style.zIndex = '0'
-//   const raft28 = cells[28]
-//   raft28.classList.add('raft28')
-
-//   const raft31 = cells[31]
-//   raft31.classList.add('raft31')
-
-
   // RIVER
   const riverElements = []
   for (let i = 22; i <= 32; i++) {
@@ -145,16 +128,6 @@ function init(){
     console.log(cells[index])
     cells[index].classList.add('raft')
   })
-
-//   const rafts = [23, 26, 29, 32]
-//   {
-//     // const rafts = cells[25]
-//     rafts.forEach.classList.add('raft')
-//     rafts.push
-//   }
-
-//   let raftCurrent = 0
-//   let raftStartPoint
 
   // ADD POSITION OF RAFTS AND RIVERS
 
@@ -175,14 +148,16 @@ function init(){
     // if any of the rafts array are on right hand side column, change dir to left
     // if any raft array are on left column, change to right
     if (rafts.some(element => {
-      console.log((element + 1) % width === 0)
+      console.log(element)
       return (element + 1) % width === 0
     })){
       direction = 'left'
       console.log('left')
     } else if (rafts.some(element => {
+      console.log(element % width !== 0)
       return element % width === 0
     })){
+
       direction = 'right'
       console.log('right')
     }
