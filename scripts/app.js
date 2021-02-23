@@ -101,22 +101,11 @@ function init(){
 
   createGrid(startPosition)
 
-
-//   const img = document.createElement('img')
-// img.src = 'https://i.imgur.com/VUBLpBp.png' 
-// const src = document.querySelector('.frodo') 
-// src.appendChild(img)
-  // ADD OBSTACLES ETC
-//   const river = cells.slice(22, 33)
-//   river.forEach(cells => {
-//     cells.classList.add('river')
-//   })  <--- version that did not work
-
 // TAVERN
   const tavern = cells[5]
   tavern.classList.add('tavern')
 
-  // RIVER
+  // RIVER -> 22-32
   const riverElements = []
   for (let i = 22; i <= 32; i++) {
     const river = cells[i]
@@ -130,17 +119,16 @@ function init(){
   })
 
   // ADD POSITION OF RAFTS AND RIVERS
-
   function addRaft(element){
     cells[element].classList.add('raft')
     // riverElements.classList.add('raft')
   }
 
-
   function removeRaft(riverElements){
     riverElements.classList.remove('raft')
   }
 
+  // MOVEMENT OF RAFTS
   setInterval(() => {
     riverElements.forEach(element => {
       removeRaft(element)
@@ -148,18 +136,15 @@ function init(){
     // if any of the rafts array are on right hand side column, change dir to left
     // if any raft array are on left column, change to right
     if (rafts.some(element => {
-      console.log(element)
       return (element + 1) % width === 0
     })){
       direction = 'left'
-      console.log('left')
     } else if (rafts.some(element => {
       console.log(element % width !== 0)
       return element % width === 0
     })){
 
       direction = 'right'
-      console.log('right')
     }
     rafts = rafts.map(element => {
       if (direction === 'right'){
@@ -189,29 +174,6 @@ function init(){
   // SET INTERVAL OF RAFTS AND RIVER MOVEMENT
 
 
-  
-
-
-    // const raft = document.createElement('div')
-    // // appendChild to specific cell of river
-    // cells[33].appendChild(raft)
-    // cells[33].classList.add('raft')
-    // // ADD RAFT AS CHILD ELEMENT, SIMILAR TO CREATE GRID
-
-    // function createGrid(startPosition) {
-    //     for (let i = 0; i < cellCount; i++) {
-    //       const cell = document.createElement('div')
-    //       cell.innerText = i
-    //       grid.appendChild(cell)
-    //       cells.push(cell)
-    //     }
-
-  
-    // const riverFinal = cells.slice(22, 33)
-    // riverFinal.forEach(cell => {
-    //   cell.classList.add('river-final')
-    // })
-  
 
 
   startButton.addEventListener('click', startGame)
