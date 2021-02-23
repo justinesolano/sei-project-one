@@ -9,6 +9,7 @@ function init(){
   const cells = []
   const frodoClass = 'frodo'
   let currentPosition = []
+  let direction = 'right'
 
   const startPosition = 82
   
@@ -139,11 +140,10 @@ function init(){
     river.classList.add('river')
     riverElements.push(river)
   }
-  const rafts = cells['23', '26', '29', '32']
-  cells.forEach(index => {
-    console.log(index)
-    index.classList.add('raft')
-    cells.push(index)
+  let rafts = [23, 26, 29, 32]
+  rafts.forEach(index => {
+    console.log(cells[index])
+    cells[index].classList.add('raft')
   })
 
 //   const rafts = [23, 26, 29, 32]
@@ -158,26 +158,47 @@ function init(){
 
   // ADD POSITION OF RAFTS AND RIVERS
 
-  function addRaft(riverElements){
-    riverElements.classList.add(rafts)
+  function addRaft(element){
+    cells[element].classList.add('raft')
+    // riverElements.classList.add('raft')
   }
 
 
   function removeRaft(riverElements){
-    riverElements.classList.remove(rafts)
+    riverElements.classList.remove('raft')
   }
 
   setInterval(() => {
     riverElements.forEach(element => {
       removeRaft(element)
     })
-    currentPosition = currentPosition.map(element => {
-      return element + 1
+    // if any of the rafts array are on right hand side column, change dir to left
+    // if any raft array are on left column, change to right
+    if (rafts.some(element => {
+      return element % width !== width - 1
+    })){
+      direction = 'left'
+      console.log('left')
+    } else if (rafts.some(element => {
+      console.log(element % width !== 0)
+      return element - 1 % width !== width - 1
+    })){
+
+      direction = 'right'
+      console.log('right')
+    }
+    rafts = rafts.map(element => {
+      if (direction === 'right'){
+        return element + 1
+      }
+      else if (direction === 'left'){
+        return element - 1
+      }
     })
-    currentPosition.forEach(item => {
+    rafts.forEach(item => {
       addRaft(item)
-      if (currentPosition === 32){
-        currentPosition -= 10
+      if (rafts === 32){
+        rafts -= 10
       }
     })
   }, 1000)
