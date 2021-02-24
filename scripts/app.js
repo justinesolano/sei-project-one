@@ -45,32 +45,29 @@ function init(){
   hoverImg.addEventListener('mouseleave', handleMouseLeave)
 
 
-  // ADD FRODO TO GRID
-  function addFrodo(position) {
-    cells[position].classList.add(frodoClass) 
-  } 
-
-  // REMOVE FRODO
-  function removeFrodo(position){
-    cells[position].classList.remove(frodoClass)
-  }
-  
-
-  // PLACE FRODO BACK
-  // REMOVE, UPDATE, ADD
-  function frodoFell(){
-    console.log(currentPosition)
-    removeFrodo(currentPosition)
-    currentPosition = 82
-    addFrodo(currentPosition)
-  }
-
-
-
   // START GAME
   const startButton = document.querySelector('#begin')
  
   function startGame(){
+
+    // ADD FRODO TO GRID
+    function addFrodo(position) {
+      cells[position].classList.add(frodoClass) 
+    } 
+
+    // REMOVE FRODO
+    function removeFrodo(position){
+      cells[position].classList.remove(frodoClass)
+    }
+  
+
+    // PLACE FRODO BACK
+    // REMOVE, UPDATE, ADD
+    function frodoFell(){
+      removeFrodo(currentPosition)
+      currentPosition = 82
+      addFrodo(currentPosition)
+    }
 
     // MOVE FRODO
     function movementKeys(event){
@@ -79,7 +76,7 @@ function init(){
       if (key === 39 && currentPosition % width !== width - 1){
         currentPosition++
         if (
-          cells[currentPosition].classList.contains('river') ||
+          cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
             cells[currentPosition].classList.contains('river-two') ||
             cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
@@ -88,7 +85,7 @@ function init(){
       if (key === 37 && currentPosition % width !== 0){
         currentPosition--
         if (
-          cells[currentPosition].classList.contains('river') ||
+          cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
            cells[currentPosition].classList.contains('river-two') ||
             cells[currentPosition].classList.contains('black-riders')) {
           frodoFell()
@@ -97,7 +94,7 @@ function init(){
       if (key === 38 && currentPosition >= width){
         currentPosition -= width
         if (
-          cells[currentPosition].classList.contains('river') ||
+          cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
            cells[currentPosition].classList.contains('river-two') ||
            cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
@@ -106,7 +103,7 @@ function init(){
       if (key === 40 && currentPosition + width <= width * length - 1){
         currentPosition += width
         if (
-          cells[currentPosition].classList.contains('river') ||
+          cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
            cells[currentPosition].classList.contains('river-two') ||
            cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
@@ -280,11 +277,11 @@ function init(){
         return element - 1
       }
     })
-    if (rafts.some(index => {
-      return index === currentPosition
-    })) {
-      frodoFell()
-    }
+    // if (rafts.some(index => {
+    //   return index === currentPosition
+    // })) {
+    //   frodoFell()
+    // }
     rafts.forEach(item => {
       addRaft(item)
       if (rafts === 32){
