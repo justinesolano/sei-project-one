@@ -48,22 +48,25 @@ body{
   #reset{
     margin: 120px 70px 0px 0px; 
   }
+  .safezone-one{
+    background-color: rgb(27, 68, 27);
+  }
 .river{
     background-image: url('https://i.imgur.com/v6SsdE5.gif');
-    background-size: 115%;
+    background-size: 126%;
     position: relative;
     z-index: 0;
 }
 .river .frodo{
     background-image: url('https://i.imgur.com/VUBLpBp.png');
-    background-image: url('https://i.imgur.com/v6SsdE5.gif');
+    background-color: url('https://i.imgur.com/v6SsdE5.gif');
     background-size: 115%;
     z-index: 2;
     position: relative;
 }
 .raft {
-    background-image: url('https://i.imgur.com/lGUMAWY.gif');
-    background-size: 107%;
+    background-image: url('https://i.imgur.com/wROXoar.gif');
+    background-size: 126%;
     z-index: 2;
 }
 .tavern{
@@ -72,11 +75,19 @@ body{
 }
 .road-one{
     background-image: url('https://i.imgur.com/lZzNdHH.png');
-    background-size: 100%;
+    background-size: 117%;
+}
+.road-two{
+        background-image: url('https://i.imgur.com/lZzNdHH.png');
+        background-size: 100%;
 }
 .black-riders{
     background-image: url('https://i.imgur.com/EqGJnAP.png');
-    background-size: 100%;
+    background-size: 117%;
+}
+.black-riders2{
+    background-image: url('https://i.imgur.com/EqGJnAP.png');
+    background-size: 105%;
 }
 .grid-wrapper{
     height: 100vh;
@@ -96,11 +107,12 @@ body{
   .grid div {
     /* border: 1px solid lightgrey; */
     flex-grow: 1;
-    height: 10%;
+    height: 13%;
     width: 9%;
     z-index: -2;
     /* background-color: rgb(235, 201, 127); */
   }
+
 /* .river .raft-one{
     background-image: url('https://i.imgur.com/821jTNx.png');
     background-size: 50%;

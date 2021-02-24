@@ -14,6 +14,7 @@
     
  // restart/reset option
     // function -> reset player to starting positio
+    // mozila - location.reload()
 
  // player start point - 6th grid on the bottom row
     // appears onload or after start game?
@@ -59,8 +60,8 @@
 
 
 // NARRATIVE
-    // Road
-    // Black riders
+    // Road √
+    // Black riders √
     // Trees
     // Black Riders
     // Rafts
