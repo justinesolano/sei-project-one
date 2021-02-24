@@ -138,17 +138,22 @@ function init(){
     cells[index].classList.add('black-riders')
   })
 
-
-
-  
 // ROAD 2 -> 44-54
   const roadElementsTwo = []
-  for (let i = 33; i <= 43; i++){
+  for (let i = 44; i <= 54; i++){
   const roadTwo = cells[i]
   console.log(roadTwo)
   roadTwo.classList.add('road-two')
   roadElementsTwo.push(roadTwo)
 }
+// ROAD 3 -> 34, 37, 40, 43
+  const roadElementsThree = [33, 35, 36, 38, 39, 41, 42]
+  roadElementsThree.forEach(index => {
+  console.log(cells[index])
+  cells[index].classList.add('road-three')
+})
+
+
   // BLACK RIDERS 2
   let blackRiders2 = [44, 47, 50, 53]
   blackRiders2.forEach(index => {
@@ -176,10 +181,10 @@ function init(){
   }
   // BLACK RIDERS 2
   function addBlackRiders2(element){
-    cells[element].classList.add('black-riders2')
+    cells[element].classList.add('black-riders-two')
   }
   function removeBlackRiders2(roadElementsTwo){
-    roadElementsTwo.classList.remove('black-riders2')
+    roadElementsTwo.classList.remove('black-riders-two')
   }
 
 
