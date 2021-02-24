@@ -62,7 +62,6 @@ body{
 }
 .river .frodo{
     background-image: url('https://i.imgur.com/VUBLpBp.png');
-    background-color: url('https://i.imgur.com/v6SsdE5.gif');
     background-size: 115%;
     z-index: 2;
     position: relative;
@@ -73,8 +72,11 @@ body{
     z-index: 2;
 }
 .tavern{
-    background-image: url('https://i.imgur.com/wYfsjWK.gif');
-    background-size: 100%;
+    background-image: url('https://i.imgur.com/IrPzgip.gif');
+    background-size: 129%;
+}
+.tavern-zone{
+    background-color: rgb(63, 8, 8);
 }
 .road-one{
     background-image: url('https://i.imgur.com/lZzNdHH.png');
@@ -84,6 +86,10 @@ body{
         background-image: url('https://i.imgur.com/lZzNdHH.png');
         background-size: 117%;
 }
+.river-two{
+    background-image: url('https://i.imgur.com/v6SsdE5.gif');
+    background-size: 140%;
+}
 .black-riders{
     background-image: url('https://i.imgur.com/EqGJnAP.png');
     background-size: 117%;
@@ -91,6 +97,10 @@ body{
 .black-riders-two{
     background-image: url('https://i.imgur.com/EqGJnAP.png');
     background-size: 117%;
+}
+.docks{
+    background-image: url('https://i.imgur.com/OMnV8lX.gif');
+    background-size: 138% ;
 }
 .grid-wrapper{
     height: 100vh;
