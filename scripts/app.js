@@ -81,6 +81,14 @@ function init(){
       }
       addFrodo(currentPosition)
     } 
+    // COLLISION DETECTION
+    if (currentPosition === addBlackRiders.cells.classList) {
+      console.log('game over')
+    } else {
+      console.log('alive')
+    }
+
+
     document.addEventListener('keydown', movementKeys) 
   
   // RESTART FUNCTION
@@ -90,6 +98,7 @@ function init(){
       location.reload()
     } 
     reset.addEventListener('click', clickReset)
+
 
 }
 
@@ -303,7 +312,6 @@ function init(){
     })
   }, 1000)
     
-
 
 
   startButton.addEventListener('click', riverElements)
