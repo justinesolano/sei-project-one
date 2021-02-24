@@ -110,11 +110,6 @@ function init(){
     cells[index].classList.add('raft')
   })
 
-//   const roadOne = [66, 68, 70, 72, 74, 76]
-//   roadOne.forEach(index => {
-//     cells[index].classList.add('road-one')
-//   })
-
 // ROAD -> 66-76
   const roadElements = []
   for (let i = 66; i <= 76; i++) {
@@ -130,23 +125,34 @@ function init(){
     cells[index].classList.add('black-riders')
   })
 
-  // ADD POSITION OF ASSETS
+
+
+  // ADD POSITION OF RAFTS
   function addRaft(element){
     cells[element].classList.add('raft')
-    // riverElements.classList.add('raft')
   }
 
   function removeRaft(riverElements){
     riverElements.classList.remove('raft')
   }
 
+
+  // ADD POSITION OF BLACK RIDERS
+  function addBlackRiders(element){
+    cells[element].classList.add('black-riders')
+  }
+
+  function removeRaft(roadElements){
+    roadElements.classList.remove('raft')
+  }
+
+
+
   // MOVEMENT OF RAFTS
   setInterval(() => {
     riverElements.forEach(element => {
       removeRaft(element)
     })
-    // if any of the rafts array are on right hand side column, change dir to left
-    // if any raft array are on left column, change to right
     if (rafts.some(element => {
       return (element + 1) % width === 0
     })){
@@ -173,7 +179,7 @@ function init(){
       }
     })
   }, 1000)
-  // middle - simple every second in timer remove log and add to next one on a timer add 10, remove ,add, counter, conditional
+
 
 
   startButton.addEventListener('click', riverElements)
