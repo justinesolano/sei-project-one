@@ -103,6 +103,11 @@ function init(){
     element.classList.add('safezone-one')
   })
 
+  const safeZoneTwo = cells.slice(55, 66)
+  safeZoneTwo.forEach(element => {
+    element.classList.add('safezone-two')
+  })
+
 
   // RIVER -> 22-32
   const riverElements = []
@@ -134,20 +139,18 @@ function init(){
   })
 
 
-// // ROAD -> 44-54
-//   const roadElementsTwo = []
-//   for (let i = 44; i <= 54; i++){
-//     console.log('hello')
-//   const roadTwo = cells[i]
-//   roadTwo.classlist.add('road-two')
-//   roadElementsTwo.push(roadTwo)
-// }
-//   // BLACK RIDERS 2
-//   let blackRiders2 = [44, 47, 50, 53]
-//   blackRiders2.forEach(index => {
-//     console.log(cells[index])
-//     cells[index].classList.add('black-riders2')
-//   })
+// ROAD -> 44-54
+  const roadElementsTwo = []
+  for (let i = 44; i <= 54; i++){
+  const roadTwo = cells[i]
+  roadTwo.classlist.add('road-two')
+  roadElementsTwo.push(roadTwo)
+}
+  // BLACK RIDERS 2
+  let blackRiders2 = [44, 47, 50, 53]
+  blackRiders2.forEach(index => {
+    cells[index].classList.add('black-riders-two')
+  })
 
 
   // ADD POSITION OF RAFTS
@@ -168,13 +171,13 @@ function init(){
   function removeBlackRiders(roadElements){
     roadElements.classList.remove('black-riders')
   }
-//   // BLACK RIDERS 2
-//   function addBlackRiders2(element){
-//     cells[element].classList.add('black-riders2')
-//   }
-//   function removeBlackRiders2(roadElementsTwo){
-//     roadElementsTwo.classList.remove('black-riders2')
-//   }
+  // BLACK RIDERS 2
+  function addBlackRiders2(element){
+    cells[element].classList.add('black-riders2')
+  }
+  function removeBlackRiders2(roadElementsTwo){
+    roadElementsTwo.classList.remove('black-riders2')
+  }
 
 
 
@@ -240,35 +243,35 @@ function init(){
     })
   }, 1000)
 
-//     // MOVEMENT OF BLACK RIDERS 2
-//   setInterval(() => {
-//     roadElementsTwo.forEach(element => {
-//       removeBlackRiders2(element)
-//     })
-//     if (blackRiders2.some(element => {
-//       return (element + 1) % width === 0
-//     })){
-//       direction = 'left'
-//     } else if (blackRiders2.some(element => {
-//       return element % width === 0
-//     })){
-//       direction = 'right'
-//     }
-//     blackRiders2 = blackRiders2.map(element => {
-//       if (direction === 'right'){
-//         return element + 1
-//       }
-//       else if (direction === 'left'){
-//         return element - 1
-//       }
-//     })
-//     blackRiders2.forEach(item => {
-//       addBlackRiders2(item)
-//       if (blackRiders2 === 54){
-//         blackRiders2 -= 10
-//       }
-//     })
-//   }, 1000)
+    // MOVEMENT OF BLACK RIDERS 2
+  setInterval(() => {
+    roadElementsTwo.forEach(index => {
+      removeBlackRiders2(index)
+    })
+    if (blackRiders2.some(index => {
+      return (index + 1) % width === 0
+    })){
+      direction = 'left'
+    } else if (blackRiders2.some(index => {
+      return index % width === 0
+    })){
+      direction = 'right'
+    }
+    blackRiders2 = blackRiders2.map(index => {
+      if (direction === 'right'){
+        return index + 1
+      }
+      else if (direction === 'left'){
+        return index - 1
+      }
+    })
+    blackRiders2.forEach(item => {
+      addBlackRiders2(item)
+      if (blackRiders2 === 54){
+        blackRiders2 -= 10
+      }
+    })
+  }, 1000)
     
 
 
