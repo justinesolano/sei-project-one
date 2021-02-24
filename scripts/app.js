@@ -139,11 +139,14 @@ function init(){
   })
 
 
-// ROAD -> 44-54
+
+  
+// ROAD 2 -> 44-54
   const roadElementsTwo = []
-  for (let i = 44; i <= 54; i++){
+  for (let i = 33; i <= 43; i++){
   const roadTwo = cells[i]
-  roadTwo.classlist.add('road-two')
+  console.log(roadTwo)
+  roadTwo.classList.add('road-two')
   roadElementsTwo.push(roadTwo)
 }
   // BLACK RIDERS 2
@@ -245,24 +248,26 @@ function init(){
 
     // MOVEMENT OF BLACK RIDERS 2
   setInterval(() => {
-    roadElementsTwo.forEach(index => {
-      removeBlackRiders2(index)
+    roadElementsTwo.forEach(element => {
+      removeBlackRiders2(element)
     })
-    if (blackRiders2.some(index => {
-      return (index + 1) % width === 0
+    if (blackRiders2.some(element => {
+      console.log('left')
+      return (element + 1) % width === 0
     })){
       direction = 'left'
-    } else if (blackRiders2.some(index => {
-      return index % width === 0
+    } else if (blackRiders2.some(element => {
+        console.log('right')
+      return element % width === 0
     })){
       direction = 'right'
     }
-    blackRiders2 = blackRiders2.map(index => {
+    blackRiders2 = blackRiders2.map(element => {
       if (direction === 'right'){
-        return index + 1
+        return element + 1
       }
       else if (direction === 'left'){
-        return index - 1
+        return element - 1
       }
     })
     blackRiders2.forEach(item => {
