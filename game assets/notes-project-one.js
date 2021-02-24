@@ -63,10 +63,10 @@
     // Road √
     // Black riders √
     // Trees
-    // Black Riders
-    // Rafts
-    // Road
-    // Tavern
+    // Black Riders √
+    // Rafts√
+    // Road√
+    // Tavern √
 
 
 // ADD FRODO TO GRID
