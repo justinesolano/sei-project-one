@@ -98,6 +98,11 @@ function init(){
   const tavern = cells[5]
   tavern.classList.add('tavern')
 
+  const tavernZone = cells.slice(0, 10)
+  tavernZone.forEach(element => {
+    element.classList.add('tavern-zone')
+  })
+
   const safeZoneOne = cells.slice(77, 88)
   safeZoneOne.forEach(element => {
     element.classList.add('safezone-one')
@@ -146,19 +151,28 @@ function init(){
   roadTwo.classList.add('road-two')
   roadElementsTwo.push(roadTwo)
 }
-// ROAD 3 -> 34, 37, 40, 43
-  const roadElementsThree = [33, 35, 36, 38, 39, 41, 42]
-  roadElementsThree.forEach(index => {
+// RIVER TWO -> 34, 37, 40, 43
+  const riverTwo = [33, 35, 36, 38, 39, 41, 42]
+  riverTwo.forEach(index => {
   console.log(cells[index])
-  cells[index].classList.add('road-three')
+  cells[index].classList.add('river-two')
 })
 
+  // DOCKS
+  const docks = [34, 37, 40, 43]
+  docks.forEach(index => {
+    console.log(cells[index])
+    cells[index].classList.add('docks')
+})
 
   // BLACK RIDERS 2
   let blackRiders2 = [44, 47, 50, 53]
   blackRiders2.forEach(index => {
     cells[index].classList.add('black-riders-two')
   })
+
+  // ROAD FINAL
+
 
 
   // ADD POSITION OF RAFTS
