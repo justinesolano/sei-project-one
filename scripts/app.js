@@ -8,10 +8,11 @@ function init(){
   const cellCount = width * length
   const cells = []
   const frodoClass = 'frodo'
-  let currentPosition = []
+  //   let currentPosition = []
   let direction = 'right'
 
   const startPosition = 82
+  let currentPosition = startPosition
 
   // GRID CREATION
   function createGrid(startPosition) {
@@ -25,15 +26,9 @@ function init(){
 
   }
   
-  // ADD FRODO TO GRID
-  function addFrodo(position) {
-    cells[position].classList.add(frodoClass) 
-  } 
-  
-
-// HOVER INSTRUCTIONS
+  // HOVER INSTRUCTIONS
   const hoverImg = document.querySelector('#how-to')
-  console.log(hoverImg)
+  //   console.log(hoverImg)
   
 
   function handleMouseEnter(event) {
@@ -50,48 +45,91 @@ function init(){
   hoverImg.addEventListener('mouseleave', handleMouseLeave)
 
 
+  // ADD FRODO TO GRID
+  function addFrodo(position) {
+    cells[position].classList.add(frodoClass) 
+  } 
+
+  // REMOVE FRODO
+  function removeFrodo(position){
+    cells[position].classList.remove(frodoClass)
+  }
+  
+
+  // PLACE FRODO BACK
+  // REMOVE, UPDATE, ADD
+  function frodoFell(){
+    console.log(currentPosition)
+    removeFrodo(currentPosition)
+    currentPosition = 82
+    addFrodo(currentPosition)
+  }
+
+
+
   // START GAME
   const startButton = document.querySelector('#begin')
  
   function startGame(){
 
-    const startPosition = 82
-    let currentPosition = startPosition
-// REMOVE FRODO
-    function removeFrodo(position){
-      cells[position].classList.remove(frodoClass)
-    }
-
-
-// MOVE FRODO
+    // MOVE FRODO
     function movementKeys(event){
       const key = event.keyCode
       removeFrodo(currentPosition)
       if (key === 39 && currentPosition % width !== width - 1){
         currentPosition++
+        if (
+          cells[currentPosition].classList.contains('river') ||
+            cells[currentPosition].classList.contains('river-two') ||
+            cells[currentPosition].classList.contains('black-riders')){
+          frodoFell()
+        }
       }
       if (key === 37 && currentPosition % width !== 0){
         currentPosition--
+        if (
+          cells[currentPosition].classList.contains('river') ||
+           cells[currentPosition].classList.contains('river-two') ||
+            cells[currentPosition].classList.contains('black-riders')) {
+          frodoFell()
+        }
       }
       if (key === 38 && currentPosition >= width){
         currentPosition -= width
+        if (
+          cells[currentPosition].classList.contains('river') ||
+           cells[currentPosition].classList.contains('river-two') ||
+           cells[currentPosition].classList.contains('black-riders')){
+          frodoFell()
+        }
       }
       if (key === 40 && currentPosition + width <= width * length - 1){
         currentPosition += width
+        if (
+          cells[currentPosition].classList.contains('river') ||
+           cells[currentPosition].classList.contains('river-two') ||
+           cells[currentPosition].classList.contains('black-riders')){
+          frodoFell()
+        }
       }
       addFrodo(currentPosition)
     } 
-    // COLLISION DETECTION
-    if (currentPosition === addBlackRiders.cells.classList) {
-      console.log('game over')
-    } else {
-      console.log('alive')
-    }
 
+    // function collision(event){
+    //   const key = event.keyCode
+    //   if (currentPosition === 34 && key === 37){
 
+    // }
+    // else if (currentPosition === 34 && key === 39) {
+
+    // }
+    // else if (currentPosition === 34 && key === 38 && riverTwo.classList.contains('river')){
+
+    // }
+    // document.addEventListener('keydown', collision) 
     document.addEventListener('keydown', movementKeys) 
   
-  // RESTART FUNCTION
+    // RESTART FUNCTION
 
     const reset = document.querySelector('#reset')
     function clickReset(){
@@ -100,11 +138,11 @@ function init(){
     reset.addEventListener('click', clickReset)
 
 
-}
+  }
 
   createGrid(startPosition)
-                                    // ASSETS
-// TAVERN
+  // ASSETS
+  // TAVERN
   const tavern = cells[5]
   tavern.classList.add('tavern')
 
@@ -135,11 +173,11 @@ function init(){
   // RAFTS
   let rafts = [23, 26, 29, 32]
   rafts.forEach(index => {
-    console.log(cells[index])
+    // console.log(cells[index])
     cells[index].classList.add('raft')
   })
 
-// ROAD -> 66-76
+  // ROAD -> 66-76
   const roadElements = []
   for (let i = 66; i <= 76; i++) {
     const roadOne = cells[i]
@@ -153,27 +191,27 @@ function init(){
     cells[index].classList.add('black-riders')
   })
 
-// ROAD 2 -> 44-54
+  // ROAD 2 -> 44-54
   const roadElementsTwo = []
   for (let i = 44; i <= 54; i++){
-  const roadTwo = cells[i]
-  console.log(roadTwo)
-  roadTwo.classList.add('road-two')
-  roadElementsTwo.push(roadTwo)
-}
-// RIVER TWO -> 34, 37, 40, 43
+    const roadTwo = cells[i]
+    console.log(roadTwo)
+    roadTwo.classList.add('road-two')
+    roadElementsTwo.push(roadTwo)
+  }
+  // RIVER TWO -> 34, 37, 40, 43
   const riverTwo = [33, 35, 36, 38, 39, 41, 42]
   riverTwo.forEach(index => {
-  console.log(cells[index])
-  cells[index].classList.add('river-two')
-})
+    console.log(cells[index])
+    cells[index].classList.add('river-two')
+  })
 
   // DOCKS
   const docks = [34, 37, 40, 43]
   docks.forEach(index => {
     console.log(cells[index])
     cells[index].classList.add('docks')
-})
+  })
 
   // BLACK RIDERS 2
   let blackRiders2 = [44, 47, 50, 53]
@@ -184,10 +222,10 @@ function init(){
   // ROAD FINAL
   const roadElementsThree = []
   for (let i = 11; i <= 21; i++){
-  const roadThree = cells[i]
-  roadThree.classList.add('road-three')
-  roadElementsThree.push(roadThree)
-}
+    const roadThree = cells[i]
+    roadThree.classList.add('road-three')
+    roadElementsThree.push(roadThree)
+  }
 
 
   // ADD POSITION OF RAFTS
@@ -228,7 +266,7 @@ function init(){
     })){
       direction = 'left'
     } else if (rafts.some(element => {
-      console.log(element % width !== 0)
+    //   console.log(element % width !== 0)
       return element % width === 0
     })){
 
@@ -242,6 +280,11 @@ function init(){
         return element - 1
       }
     })
+    if (rafts.some(index => {
+      return index === currentPosition
+    })) {
+      frodoFell()
+    }
     rafts.forEach(item => {
       addRaft(item)
       if (rafts === 32){
@@ -264,6 +307,7 @@ function init(){
     })){
       direction = 'right'
     }
+
     blackRiders = blackRiders.map(element => {
       if (direction === 'right'){
         return element + 1
@@ -272,6 +316,11 @@ function init(){
         return element - 1
       }
     })
+    if (blackRiders.some(index => {
+      return index === currentPosition
+    })) {
+      frodoFell()
+    }
     blackRiders.forEach(item => {
       addBlackRiders(item)
       if (blackRiders === 76){
@@ -280,18 +329,18 @@ function init(){
     })
   }, 1000)
 
-    // MOVEMENT OF BLACK RIDERS 2
+  // MOVEMENT OF BLACK RIDERS 2
   setInterval(() => {
     roadElementsTwo.forEach(element => {
       removeBlackRiders2(element)
     })
     if (blackRiders2.some(element => {
-      console.log('left')
+    //   console.log('left')
       return (element + 1) % width === 0
     })){
       direction = 'left'
     } else if (blackRiders2.some(element => {
-        console.log('right')
+      // console.log('right')
       return element % width === 0
     })){
       direction = 'right'
@@ -304,6 +353,11 @@ function init(){
         return element - 1
       }
     })
+    if (blackRiders2.some(index => {
+      return index === currentPosition
+    })) {
+      frodoFell()
+    }
     blackRiders2.forEach(item => {
       addBlackRiders2(item)
       if (blackRiders2 === 54){
