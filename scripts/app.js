@@ -142,10 +142,9 @@ function init(){
     cells[element].classList.add('black-riders')
   }
 
-  function removeRaft(roadElements){
-    roadElements.classList.remove('raft')
+  function removeBlackRiders(roadElements){
+    roadElements.classList.remove('black-riders')
   }
-
 
 
   // MOVEMENT OF RAFTS
@@ -176,6 +175,36 @@ function init(){
       addRaft(item)
       if (rafts === 32){
         rafts -= 10
+      }
+    })
+  }, 1000)
+
+  // MOVEMENT OF BLACK RIDERS
+  setInterval(() => {
+    roadElements.forEach(element => {
+      removeBlackRiders(element)
+    })
+    if (rafts.some(element => {
+      return (element + 1) % width === 0
+    })){
+      direction = 'left'
+    } else if (rafts.some(element => {
+      return element % width === 0
+    })){
+      direction = 'right'
+    }
+    blackRiders = blackRiders.map(element => {
+      if (direction === 'right'){
+        return element + 1
+      }
+      else if (direction === 'left'){
+        return element - 1
+      }
+    })
+    blackRiders.forEach(item => {
+      addBlackRiders(item)
+      if (blackRiders === 32){
+        blackRiders - 10
       }
     })
   }, 1000)
