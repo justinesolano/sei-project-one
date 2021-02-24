@@ -78,11 +78,18 @@ function init(){
       if (key === 40 && currentPosition + width <= width * length - 1){
         currentPosition += width
       }
-
-
       addFrodo(currentPosition)
     } 
     document.addEventListener('keydown', movementKeys) 
+  
+  // RESTART FUNCTION
+
+    const reset = document.querySelector('#reset')
+    function clickReset(){
+      location.reload()
+    } 
+    reset.addEventListener('click', clickReset)
+
 }
 
   createGrid(startPosition)
@@ -91,7 +98,10 @@ function init(){
   const tavern = cells[5]
   tavern.classList.add('tavern')
 
-
+  const safeZoneOne = cells.slice(77, 88)
+  safeZoneOne.forEach(element => {
+    element.classList.add('safezone-one')
+  })
 
 
   // RIVER -> 22-32
@@ -101,7 +111,6 @@ function init(){
     river.classList.add('river')
     riverElements.push(river)
   }
-
 
   // RAFTS
   let rafts = [23, 26, 29, 32]
@@ -117,14 +126,28 @@ function init(){
     roadOne.classList.add('road-one')
     roadElements.push(roadOne)
   }
-
-  // NAZGUL 
-  let blackRiders = [66, 69, 72, 75]
+  // BLACK RIDERS
+  let blackRiders = [67, 69, 71, 73, 75]
   blackRiders.forEach(index => {
     console.log(cells[index])
     cells[index].classList.add('black-riders')
   })
 
+
+// // ROAD -> 44-54
+//   const roadElementsTwo = []
+//   for (let i = 44; i <= 54; i++){
+//     console.log('hello')
+//   const roadTwo = cells[i]
+//   roadTwo.classlist.add('road-two')
+//   roadElementsTwo.push(roadTwo)
+// }
+//   // BLACK RIDERS 2
+//   let blackRiders2 = [44, 47, 50, 53]
+//   blackRiders2.forEach(index => {
+//     console.log(cells[index])
+//     cells[index].classList.add('black-riders2')
+//   })
 
 
   // ADD POSITION OF RAFTS
@@ -145,6 +168,14 @@ function init(){
   function removeBlackRiders(roadElements){
     roadElements.classList.remove('black-riders')
   }
+//   // BLACK RIDERS 2
+//   function addBlackRiders2(element){
+//     cells[element].classList.add('black-riders2')
+//   }
+//   function removeBlackRiders2(roadElementsTwo){
+//     roadElementsTwo.classList.remove('black-riders2')
+//   }
+
 
 
   // MOVEMENT OF RAFTS
@@ -179,16 +210,16 @@ function init(){
     })
   }, 1000)
 
-  // MOVEMENT OF BLACK RIDERS
+  // MOVEMENT OF BLACK RIDERS 1
   setInterval(() => {
     roadElements.forEach(element => {
       removeBlackRiders(element)
     })
-    if (rafts.some(element => {
+    if (blackRiders.some(element => {
       return (element + 1) % width === 0
     })){
       direction = 'left'
-    } else if (rafts.some(element => {
+    } else if (blackRiders.some(element => {
       return element % width === 0
     })){
       direction = 'right'
@@ -203,25 +234,46 @@ function init(){
     })
     blackRiders.forEach(item => {
       addBlackRiders(item)
-      if (blackRiders === 32){
-        blackRiders - 10
+      if (blackRiders === 76){
+        blackRiders -= 10
       }
     })
   }, 1000)
 
+//     // MOVEMENT OF BLACK RIDERS 2
+//   setInterval(() => {
+//     roadElementsTwo.forEach(element => {
+//       removeBlackRiders2(element)
+//     })
+//     if (blackRiders2.some(element => {
+//       return (element + 1) % width === 0
+//     })){
+//       direction = 'left'
+//     } else if (blackRiders2.some(element => {
+//       return element % width === 0
+//     })){
+//       direction = 'right'
+//     }
+//     blackRiders2 = blackRiders2.map(element => {
+//       if (direction === 'right'){
+//         return element + 1
+//       }
+//       else if (direction === 'left'){
+//         return element - 1
+//       }
+//     })
+//     blackRiders2.forEach(item => {
+//       addBlackRiders2(item)
+//       if (blackRiders2 === 54){
+//         blackRiders2 -= 10
+//       }
+//     })
+//   }, 1000)
+    
+
 
 
   startButton.addEventListener('click', riverElements)
-
-
-//   function addRaft(position) { // takes argument so function is reusable
-//     cells[position].classList.add('.raft22') 
-//   }
-
-  // SET INTERVAL OF RAFTS AND RIVER MOVEMENT
-
-
-
 
   startButton.addEventListener('click', startGame)
 
