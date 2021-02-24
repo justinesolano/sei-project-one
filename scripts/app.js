@@ -62,6 +62,7 @@ function init(){
       cells[position].classList.remove(frodoClass)
     }
 
+
 // MOVE FRODO
     function movementKeys(event){
       const key = event.keyCode
@@ -98,7 +99,7 @@ function init(){
   const tavern = cells[5]
   tavern.classList.add('tavern')
 
-  const tavernZone = cells.slice(0, 10)
+  const tavernZone = cells.slice(0, 11)
   tavernZone.forEach(element => {
     element.classList.add('tavern-zone')
   })
@@ -172,7 +173,12 @@ function init(){
   })
 
   // ROAD FINAL
-
+  const roadElementsThree = []
+  for (let i = 11; i <= 21; i++){
+  const roadThree = cells[i]
+  roadThree.classList.add('road-three')
+  roadElementsThree.push(roadThree)
+}
 
 
   // ADD POSITION OF RAFTS
