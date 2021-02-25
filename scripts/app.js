@@ -18,7 +18,7 @@ function init(){
   function createGrid(startPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      cell.innerText = i
+    //   cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -189,6 +189,7 @@ function init(){
       location.reload()
       result.style.visiblity = 'hidden'
       result.style.visiblity = 'hidden'
+      currentPosition = 82
     } 
     reset.addEventListener('click', clickReset)
   }
