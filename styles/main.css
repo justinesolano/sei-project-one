@@ -106,11 +106,17 @@ body{
     background-image: url('https://i.imgur.com/OMnV8lX.gif');
     background-size: 138% ;
 }
+.docks .frodo{
+    background-image: url('https://i.imgur.com/OMnV8lX.gif');
+    background-image: url('https://i.imgur.com/VUBLpBp.png');
+    background-size: 138% ;
+}
 .grid-wrapper{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0px 100px;
 }
 .grid {
     align-items: center;
@@ -131,13 +137,43 @@ body{
 
     /* background-color: rgb(235, 201, 127); */
   }
-  /* .game-over{
+  .result{
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      border: 1px;
-      padding: 0px 0px 0px 0px;
-  } */
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 550px;
+      height: 400px;
+      font-size: 20px;
+      background-image: url('https://i.imgur.com/pwWrrQn.png');
+      background-size: 100%;
+      position: absolute;
+      top: 250px;
+      left: 750px;
+      /* visibility: hidden; */
+  }
+.result-two{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 550px;
+    height: 400px;
+    font-size: 20px;
+    background-image: url('https://i.imgur.com/Ge0Ze17.png');
+    background-size: 100%;
+    position: absolute;
+    top: 250px;
+    left: 750px;
+    visibility: hidden;
+}
+  /* padding: 0px 0px 15px 0px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border: 1px; */
   /* .menu{
     padding: 0px 0px 15px 0px;
     display: flex;
