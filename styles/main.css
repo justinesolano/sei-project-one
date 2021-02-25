@@ -120,6 +120,7 @@ body{
     justify-content: center;
     height: 700px;
     width: 1000px;
+    padding: 0px 200px 0px 0x;
   }
   .grid div {
     /* border: 1px solid lightgrey; */
@@ -127,9 +128,30 @@ body{
     height: 13%;
     width: 9%;
     z-index: -2;
+
     /* background-color: rgb(235, 201, 127); */
   }
-
+  /* .game-over{
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border: 1px;
+      padding: 0px 0px 0px 0px;
+  } */
+  /* .menu{
+    padding: 0px 0px 15px 0px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: 1px;
+  } */
+  .menu{
+    padding: 0px 0px 15px 0px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: 1px;
+  }
 /* .river .raft-one{
     background-image: url('https://i.imgur.com/821jTNx.png');
     background-size: 50%;
