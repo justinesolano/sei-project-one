@@ -9,7 +9,6 @@ function init(){
   const cellCount = width * length
   const cells = []
   const frodoClass = 'frodo'
-  //   let currentPosition = []
   let direction = 'right'
 
   const startPosition = 82
@@ -19,7 +18,7 @@ function init(){
   function createGrid(startPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-    //   cell.innerText = i
+      cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -50,10 +49,9 @@ function init(){
     currentPosition = 82
     addFrodo(currentPosition)
   }
-
   // FRODO WINS
   function frodoWins(){
-    // points + 1
+    console.log('WINNER!')
   }
 
   // HOVER INSTRUCTIONS
@@ -77,8 +75,26 @@ function init(){
 
   // START GAME
   const startButton = document.querySelector('#begin')
- 
+
   function startGame(){
+
+    // FRODO CANNOT WALK INTO TREES
+
+    function noUpTree(){
+      currentPosition += width
+    }
+
+    function noDownTree(){
+      currentPosition -= width
+    }
+
+    function noLeftTree(){
+      currentPosition -= width
+    }
+
+    function noRightTree(){
+      currentPosition += width
+    }
 
     // MOVE FRODO
     function movementKeys(event){
@@ -100,7 +116,10 @@ function init(){
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
           result.style.opacity = '1'
+        } else if (cells[currentPosition].classList.contains('trees')){
+          noLeftTree()
         }
+        
       }
       if (key === 37 && currentPosition % width !== 0){
         currentPosition--
@@ -114,6 +133,8 @@ function init(){
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
           result.style.opacity = '1'
+        } else if (cells[currentPosition].classList.contains('trees')){
+          noRightTree()
         }
       }
       if (key === 38 && currentPosition >= width){
@@ -128,6 +149,8 @@ function init(){
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
           result.style.opacity = '1'
+        } else if (cells[currentPosition].classList.contains('trees')){
+          noUpTree()
         }
       }
       if (key === 40 && currentPosition + width <= width * length - 1){
@@ -142,6 +165,8 @@ function init(){
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
           result.style.opacity = '1'
+        } else if (cells[currentPosition].classList.contains('trees')){
+          noDownTree()
         }
       }
       addFrodo(currentPosition)
@@ -186,6 +211,11 @@ function init(){
   const trees = [1, 3, 7, 9]
   trees.forEach(index => {
     cells[index].classList.add('trees')
+  })
+
+  const treesTwo = [57, 60, 63]
+  treesTwo.forEach(index => {
+    cells[index].classList.add('trees-two')
   })
 
 
