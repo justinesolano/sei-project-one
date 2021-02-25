@@ -37,16 +37,10 @@ function init(){
     cells[position].classList.remove(frodoClass)
   }
     
-//   const points = 0
-
   //RESULT
   const result = document.querySelector('.result')
   const resultTwo = document.querySelector('.result-two')
   const howTo = document.querySelector('.how-to-two')
-  console.log(howTo)
-//   function toggleHowTo(){
-//     howTo.style.opacity = '1'
-//   }
 
 
   // PLACE FRODO BACK
@@ -64,8 +58,6 @@ function init(){
 
   // HOVER INSTRUCTIONS
   const hoverImg = document.querySelector('#how-to')
-//   const howTo = document.querySelector('.how-to-two')
-  //   console.log(hoverImg)
 
   function handleMouseEnter() {
     console.log('being hovered on')
@@ -77,18 +69,8 @@ function init(){
     howTo.style.opacity = '0'
   }
 
-    //     console.log('being hovered on')
-    //     event.target.src = 'https://fontmeme.com/permalink/210219/1e9e5bccb56715cd51fcb9b27cb3c36b.png'
-    //   }
-    
-    //   function handleMouseLeave(event){
-    //     console.log('Mouse has left')
-    //     event.target.src = 'https://i.imgur.com/LsUHlrM.png'
-    //   }
-    
-      hoverImg.addEventListener('mouseenter', handleMouseEnter)
-      hoverImg.addEventListener('mouseleave', handleMouseLeave)
-
+  hoverImg.addEventListener('mouseenter', handleMouseEnter)
+  hoverImg.addEventListener('mouseleave', handleMouseLeave)
 
 
   // START GAME
@@ -163,7 +145,6 @@ function init(){
       addFrodo(currentPosition)
     } 
 
-
     document.addEventListener('keydown', movementKeys) 
     
     // RESTART FUNCTION
@@ -175,12 +156,10 @@ function init(){
       result.style.visiblity = 'hidden'
     } 
     reset.addEventListener('click', clickReset)
-
-
   }
 
   createGrid(startPosition)
-  // ASSETS
+
   
   // TAVERN
   const tavern = cells[5]
