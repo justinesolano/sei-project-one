@@ -49,11 +49,10 @@ function init(){
     result.innerText = 'YOU LOSE! Frodo has failed in his quest but thankfully, has a chance to try again. Press restart!'
   }
 
-//   // FRODO WINS
-//   function frodoWins(){
-//     removeFrodo(currentPosition)
-//     result.innerText = 'YOU WIN! Frodo has reached the Prancing Pony Inn without being turned into Nazgul meat!'
-//   }
+  // FRODO WINS
+  function frodoWins(){
+    result.innerText = 'YOU WIN! Frodo has reached the Prancing Pony Inn without being turned into Nazgul meat!'
+  }
 
   // HOVER INSTRUCTIONS
   const hoverImg = document.querySelector('#how-to')
@@ -83,13 +82,15 @@ function init(){
     function movementKeys(event){
       const key = event.keyCode
       removeFrodo(currentPosition)
+      if (cells[5].classList.contains('frodo')){
+        frodoWins()
+      }
       if (key === 39 && currentPosition % width !== width - 1){
         currentPosition++
         if (
           cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
             cells[currentPosition].classList.contains('river-two') ||
             cells[currentPosition].classList.contains('black-riders')){
-          console.log('save me')
           frodoFell()
         }
       }
@@ -120,10 +121,7 @@ function init(){
           frodoFell()
         }
       }
-      console.log('cp one', currentPosition)
-      //   addFrodo(currentPosition)
-      cells[currentPosition].classList.add(frodoClass) 
-      console.log('current position 1', currentPosition)
+      addFrodo(currentPosition)
     } 
 
 
@@ -143,6 +141,7 @@ function init(){
   createGrid(startPosition)
   // ASSETS
   // TAVERN
+
   const tavern = cells[5]
   tavern.classList.add('tavern')
 
@@ -169,13 +168,6 @@ function init(){
     river.classList.add('river')
     riverElements.push(river)
   }
-
-  // RAFTS
-  let rafts = [23, 26, 29, 32]
-  rafts.forEach(index => {
-    // console.log(cells[index])
-    cells[index].classList.add('raft')
-  })
 
   // ROAD -> 66-76
   const roadElements = []
@@ -255,6 +247,12 @@ function init(){
   }
 
 
+  // RAFTS
+  let rafts = [23, 26, 29, 32]
+  rafts.forEach(index => {
+    // console.log(cells[index])
+    cells[index].classList.add('raft')
+  })
 
   // MOVEMENT OF RAFTS
   setInterval(() => {
@@ -265,6 +263,11 @@ function init(){
       return (element + 1) % width === 0
     })){
       direction = 'left'
+      if (cells[currentPosition].classList.contains('rafts')) {
+        removeFrodo()
+        return (currentPosition + 1) % width === 0
+        rafts.classList.add('frodo')
+      }
     } else if (rafts.some(element => {
     //   console.log(element % width !== 0)
       return element % width === 0
@@ -283,6 +286,11 @@ function init(){
     if (cells[currentPosition].classList.contains('river')) {
       frodoFell()
     }
+    // else if (cells[currentPosition].classList.contains('rafts')) {
+    //   removeFrodo()
+    //   const newPosition = 
+    //   cells[currentPosition] === rafts
+    // }
     rafts.forEach(item => {
       addRaft(item)
       if (rafts === 32){
@@ -296,6 +304,7 @@ function init(){
     roadElements.forEach(element => {
       removeBlackRiders(element)
     })
+    
     if (blackRiders.some(element => {
       return (element + 1) % width === 0
     })){
