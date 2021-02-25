@@ -89,11 +89,11 @@ function init(){
     }
 
     function noLeftTree(){
-      currentPosition -= width
+      currentPosition -= 1
     }
 
     function noRightTree(){
-      currentPosition += width
+      currentPosition += 1
     }
 
     // MOVE FRODO
@@ -118,8 +118,9 @@ function init(){
           result.style.opacity = '1'
         } else if (cells[currentPosition].classList.contains('trees')){
           noLeftTree()
+        } else if (cells[currentPosition].classList.contains('trees-two')){
+          noLeftTree()
         }
-        
       }
       if (key === 37 && currentPosition % width !== 0){
         currentPosition--
@@ -134,6 +135,8 @@ function init(){
           frodoWins()
           result.style.opacity = '1'
         } else if (cells[currentPosition].classList.contains('trees')){
+          noRightTree()
+        } else if (cells[currentPosition].classList.contains('trees-two')){
           noRightTree()
         }
       }
@@ -152,6 +155,9 @@ function init(){
         } else if (cells[currentPosition].classList.contains('trees')){
           noUpTree()
         }
+        else if (cells[currentPosition].classList.contains('trees-two')){
+          noUpTree()
+        }
       }
       if (key === 40 && currentPosition + width <= width * length - 1){
         currentPosition += width
@@ -166,6 +172,8 @@ function init(){
           frodoWins()
           result.style.opacity = '1'
         } else if (cells[currentPosition].classList.contains('trees')){
+          noDownTree()
+        } else if (cells[currentPosition].classList.contains('trees-two')){
           noDownTree()
         }
       }
