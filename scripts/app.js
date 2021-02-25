@@ -114,18 +114,6 @@ function init(){
       addFrodo(currentPosition)
     } 
 
-    // function collision(event){
-    //   const key = event.keyCode
-    //   if (currentPosition === 34 && key === 37){
-
-    // }
-    // else if (currentPosition === 34 && key === 39) {
-
-    // }
-    // else if (currentPosition === 34 && key === 38 && riverTwo.classList.contains('river')){
-
-    // }
-    // document.addEventListener('keydown', collision) 
     document.addEventListener('keydown', movementKeys) 
   
     // RESTART FUNCTION
