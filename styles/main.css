@@ -104,13 +104,14 @@ body{
     background-size: 117%;
 }
 .docks{
-    background-image: url('https://i.imgur.com/OMnV8lX.gif');
+    background-image: url('https://i.imgur.com/5jkIR6O.gif');
     background-size: 138% ;
 }
 .docks .frodo{
-    background-image: url('https://i.imgur.com/OMnV8lX.gif');
     background-image: url('https://i.imgur.com/VUBLpBp.png');
-    background-size: 138% ;
+    background-image: url('https://i.imgur.com/OMnV8lX.gif');
+    background-size: 138%;
+    z-index: -1;
 }
 .grid-wrapper{
     height: 100vh;
@@ -135,6 +136,7 @@ body{
     width: 9%;
     z-index: -2;
   }
+  /* WIN FUNCTION */
   .result{
       display: flex;
       flex-direction: column;
@@ -152,7 +154,7 @@ body{
       opacity: 0;
       /* visibility: hidden; */
   }
-  /* //YOU WIN */
+/* LOSE FUNCTION */
 .result-two{
     display: flex;
     flex-direction: column;
