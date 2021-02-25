@@ -23,9 +23,30 @@ function init(){
       cells.push(cell)
     }
     addFrodo(startPosition)
-
   }
   
+
+  // ADD FRODO TO GRID
+  function addFrodo(position) {
+    cells[position].classList.add(frodoClass) 
+  } 
+  
+  // REMOVE FRODO
+  function removeFrodo(position){
+    cells[position].classList.remove(frodoClass)
+  }
+    
+  
+  // PLACE FRODO BACK
+  // REMOVE, UPDATE, ADD
+  function frodoFell(){
+    removeFrodo(currentPosition)
+    currentPosition = 82
+    addFrodo(currentPosition)
+  }
+  
+
+
   // HOVER INSTRUCTIONS
   const hoverImg = document.querySelector('#how-to')
   //   console.log(hoverImg)
@@ -49,25 +70,6 @@ function init(){
   const startButton = document.querySelector('#begin')
  
   function startGame(){
-
-    // ADD FRODO TO GRID
-    function addFrodo(position) {
-      cells[position].classList.add(frodoClass) 
-    } 
-
-    // REMOVE FRODO
-    function removeFrodo(position){
-      cells[position].classList.remove(frodoClass)
-    }
-  
-
-    // PLACE FRODO BACK
-    // REMOVE, UPDATE, ADD
-    function frodoFell(){
-      removeFrodo(currentPosition)
-      currentPosition = 82
-      addFrodo(currentPosition)
-    }
 
     // MOVE FRODO
     function movementKeys(event){
@@ -277,11 +279,11 @@ function init(){
         return element - 1
       }
     })
-    // if (rafts.some(index => {
-    //   return index === currentPosition
-    // })) {
-    //   frodoFell()
-    // }
+    if (rafts.some(index => {
+      return index !== currentPosition
+    })) {
+      frodoFell()
+    }
     rafts.forEach(item => {
       addRaft(item)
       if (rafts === 32){
