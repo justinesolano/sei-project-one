@@ -18,7 +18,7 @@ function init(){
   function createGrid(startPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      cell.innerText = i
+    //   cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -46,12 +46,12 @@ function init(){
     removeFrodo(currentPosition)
     currentPosition = 82
     addFrodo(currentPosition)
-    result.innerText = 'YOU LOSE! Frodo has failed in his quest but thankfully, has a chance to try again. Press restart!'
+    document.querySelector('.result-two').style.visiblity = 'initial'
   }
 
   // FRODO WINS
   function frodoWins(){
-    result.innerText = 'YOU WIN! Frodo has reached the Prancing Pony Inn without being turned into Nazgul meat!'
+    document.querySelector('.result').style.visiblity = 'initial'
   }
 
   // HOVER INSTRUCTIONS
@@ -92,6 +92,9 @@ function init(){
             cells[currentPosition].classList.contains('river-two') ||
             cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
+        } else if (
+          cells[currentPosition].classList.contains('tavern')){
+          frodoWins()
         }
       }
       if (key === 37 && currentPosition % width !== 0){
@@ -101,6 +104,9 @@ function init(){
            cells[currentPosition].classList.contains('river-two') ||
             cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
+        } else if (
+          cells[currentPosition].classList.contains('tavern')){
+          frodoWins()
         }
       }
       if (key === 38 && currentPosition >= width){
@@ -110,6 +116,9 @@ function init(){
            cells[currentPosition].classList.contains('river-two') ||
            cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
+        } else if (
+          cells[currentPosition].classList.contains('tavern')){
+          frodoWins()
         }
       }
       if (key === 40 && currentPosition + width <= width * length - 1){
@@ -119,6 +128,9 @@ function init(){
            cells[currentPosition].classList.contains('river-two') ||
            cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
+        } else if (
+          cells[currentPosition].classList.contains('tavern')){
+          frodoWins()
         }
       }
       addFrodo(currentPosition)
@@ -132,6 +144,8 @@ function init(){
     const reset = document.querySelector('#reset')
     function clickReset(){
       location.reload()
+      document.querySelector('.result').style.visiblity = 'hidden'
+      document.querySelector('.result-two').style.visiblity = 'hidden'
     } 
     reset.addEventListener('click', clickReset)
 
@@ -140,8 +154,8 @@ function init(){
 
   createGrid(startPosition)
   // ASSETS
+  
   // TAVERN
-
   const tavern = cells[5]
   tavern.classList.add('tavern')
 
@@ -263,11 +277,6 @@ function init(){
       return (element + 1) % width === 0
     })){
       direction = 'left'
-      if (cells[currentPosition].classList.contains('rafts')) {
-        removeFrodo()
-        return (currentPosition + 1) % width === 0
-        rafts.classList.add('frodo')
-      }
     } else if (rafts.some(element => {
     //   console.log(element % width !== 0)
       return element % width === 0
@@ -324,10 +333,10 @@ function init(){
       }
     })
     if (blackRiders2.some(index => {
-        return index === currentPosition
-      })) {
-        frodoFell()
-      }
+      return index === currentPosition
+    })) {
+      frodoFell()
+    }
     blackRiders.forEach(item => {
       addBlackRiders(item)
       if (blackRiders === 76){
