@@ -19,7 +19,7 @@ function init(){
   function createGrid(startPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      //   cell.innerText = i
+      cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -178,6 +178,13 @@ function init(){
   const safeZoneTwo = cells.slice(55, 66)
   safeZoneTwo.forEach(element => {
     element.classList.add('safezone-two')
+  })
+
+  // TREES 
+  const trees = [1, 3, 7, 9]
+  trees.forEach(index => {
+    console.log(cells[index])
+    cells[index].classList.add('trees')
   })
 
 

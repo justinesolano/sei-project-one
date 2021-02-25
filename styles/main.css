@@ -77,7 +77,11 @@ body{
     background-size: 129%;
 }
 .tavern-zone{
-    background-color: rgb(63, 8, 8);
+    background-color: rgb(53, 40, 40);
+}
+.trees{
+    background-image: url('https://i.imgur.com/Chbub34.png');
+    background-size: 99%;
 }
 .road-one{
     background-image: url('https://i.imgur.com/qPhVn3Z.png');
