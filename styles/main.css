@@ -12,7 +12,6 @@ body{
     background-image: url('https://i.imgur.com/ycJu4jC.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    /* height: 300px; */
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -27,7 +26,14 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
-    /* display: block; */
+    position: relative;
+    z-index: 3;
+  }
+  .frodo {
+    background-image: url('https://i.imgur.com/rxccZ3Z.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
     position: relative;
     z-index: 3;
   }
@@ -39,18 +45,18 @@ body{
     border: 1px;
   }
   #begin, #how-to, #reset{
-    width: 100px;
+    width: 140px;
     height: 130px;
     margin: 90px 50px 10px -200px;
   }
   #begin{
-    margin: 120px 70px -30px 0px;
+    margin: 170px 50px -30px 0px;
   }
   #how-to{
-    margin: 120px 70px -30px 0px;
+    margin: 120px 50px -30px 0px;
   }
   #reset{
-    margin: 120px 70px 0px 0px; 
+    margin: 120px 50px 0px 0px; 
   }
   .safezone-one{
     background-color: rgb(27, 68, 27);
@@ -86,9 +92,14 @@ body{
     background-image: url('https://i.imgur.com/Chbub34.png');
     background-size: 99%;
 }
+.trees-two{
+    background-image: url('https://i.imgur.com/Chbub34.png');
+    background-size: 99%;
+}
 .road-one{
     background-image: url('https://i.imgur.com/qPhVn3Z.png');
     background-size: 117%;
+    z-index: 2;
 }
 .road-two{
         background-image: url('https://i.imgur.com/qPhVn3Z.png');
@@ -153,13 +164,12 @@ body{
       width: 550px;
       height: 400px;
       font-size: 20px;
-      background-image: url('https://i.imgur.com/KL0IcZz.png');
+      background-image: url('https://i.imgur.com/maRuPbX.png');
       background-size: 100%;
       position: absolute;
       top: 250px;
       left: 725px;
       opacity: 0;
-      /* visibility: hidden; */
   }
 /* LOSE FUNCTION */
 .result-two{
@@ -171,13 +181,12 @@ body{
     width: 550px;
     height: 400px;
     font-size: 20px;
-    background-image: url('https://i.imgur.com/0iFnZ8R.png');
+    background-image: url('https://i.imgur.com/fkDvSb4.png');
     background-size: 100%;
     position: absolute;
     top: 250px;
     left: 725px;
     opacity: 0;
-    /* visibility: hidden; */
 }
 .how-to-two{
     display: flex;
@@ -206,7 +215,5 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* margin-left: 10px; */
     margin-right: -460px;
-    /* margin: 0px -10px -20px 0px; */
 }
