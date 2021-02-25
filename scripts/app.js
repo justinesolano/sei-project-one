@@ -19,7 +19,7 @@ function init(){
   function createGrid(startPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      cell.innerText = i
+    //   cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -60,13 +60,15 @@ function init(){
   const hoverImg = document.querySelector('#how-to')
 
   function handleMouseEnter() {
-    console.log('being hovered on')
     howTo.style.opacity = '1'
+    result.style.opacity = '0'
+    resultTwo.style.opacity = '0'
   }
 
   function handleMouseLeave(){
-    console.log('Mouse has left')
     howTo.style.opacity = '0'
+    result.style.opacity = '0'
+    resultTwo.style.opacity = '0'
   }
 
   hoverImg.addEventListener('mouseenter', handleMouseEnter)
@@ -183,7 +185,6 @@ function init(){
   // TREES 
   const trees = [1, 3, 7, 9]
   trees.forEach(index => {
-    console.log(cells[index])
     cells[index].classList.add('trees')
   })
 
@@ -206,7 +207,6 @@ function init(){
   // BLACK RIDERS
   let blackRiders = [67, 69, 71, 73, 75]
   blackRiders.forEach(index => {
-    console.log(cells[index])
     cells[index].classList.add('black-riders')
   })
 
@@ -214,21 +214,18 @@ function init(){
   const roadElementsTwo = []
   for (let i = 44; i <= 54; i++){
     const roadTwo = cells[i]
-    console.log(roadTwo)
     roadTwo.classList.add('road-two')
     roadElementsTwo.push(roadTwo)
   }
   // RIVER TWO -> 34, 37, 40, 43
   const riverTwo = [33, 35, 36, 38, 39, 41, 42]
   riverTwo.forEach(index => {
-    console.log(cells[index])
     cells[index].classList.add('river-two')
   })
 
   // DOCKS
   const docks = [34, 37, 40, 43]
   docks.forEach(index => {
-    console.log(cells[index])
     cells[index].classList.add('docks')
   })
 
@@ -277,7 +274,6 @@ function init(){
   // RAFTS
   let rafts = [23, 26, 29, 32]
   rafts.forEach(index => {
-    // console.log(cells[index])
     cells[index].classList.add('raft')
   })
 
@@ -291,7 +287,6 @@ function init(){
     })){
       direction = 'left'
     } else if (rafts.some(element => {
-    //   console.log(element % width !== 0)
       return element % width === 0
     })){
 
@@ -361,12 +356,10 @@ function init(){
       removeBlackRiders2(element)
     })
     if (blackRiders2.some(element => {
-    //   console.log('left')
       return (element + 1) % width === 0
     })){
       direction = 'left'
     } else if (blackRiders2.some(element => {
-      // console.log('right')
       return element % width === 0
     })){
       direction = 'right'
