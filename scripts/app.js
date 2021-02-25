@@ -1,6 +1,7 @@
 function init(){
 
 
+
   // VARIABLES
   const grid = document.querySelector('.grid')
   const length = 8
@@ -36,12 +37,17 @@ function init(){
     cells[position].classList.remove(frodoClass)
   }
     
-  const points = 0
+//   const points = 0
 
   //RESULT
   const result = document.querySelector('.result')
   const resultTwo = document.querySelector('.result-two')
-  const howTo = document.querySelector('.how-to')
+  const howTo = document.querySelector('.how-to-two')
+  console.log(howTo)
+//   function toggleHowTo(){
+//     howTo.style.opacity = '1'
+//   }
+
 
   // PLACE FRODO BACK
   // REMOVE, UPDATE, ADD
@@ -53,26 +59,36 @@ function init(){
 
   // FRODO WINS
   function frodoWins(){
-    points + 1
+    // points + 1
   }
 
   // HOVER INSTRUCTIONS
   const hoverImg = document.querySelector('#how-to')
+//   const howTo = document.querySelector('.how-to-two')
   //   console.log(hoverImg)
-  
 
-  function handleMouseEnter(event) {
+  function handleMouseEnter() {
     console.log('being hovered on')
-    event.target.src = 'https://fontmeme.com/permalink/210219/1e9e5bccb56715cd51fcb9b27cb3c36b.png'
+    howTo.style.opacity = '1'
   }
 
-  function handleMouseLeave(event){
+  function handleMouseLeave(){
     console.log('Mouse has left')
-    event.target.src = 'https://i.imgur.com/LsUHlrM.png'
+    howTo.style.opacity = '0'
   }
 
-  hoverImg.addEventListener('mouseenter', handleMouseEnter)
-  hoverImg.addEventListener('mouseleave', handleMouseLeave)
+    //     console.log('being hovered on')
+    //     event.target.src = 'https://fontmeme.com/permalink/210219/1e9e5bccb56715cd51fcb9b27cb3c36b.png'
+    //   }
+    
+    //   function handleMouseLeave(event){
+    //     console.log('Mouse has left')
+    //     event.target.src = 'https://i.imgur.com/LsUHlrM.png'
+    //   }
+    
+      hoverImg.addEventListener('mouseenter', handleMouseEnter)
+      hoverImg.addEventListener('mouseleave', handleMouseLeave)
+
 
 
   // START GAME
