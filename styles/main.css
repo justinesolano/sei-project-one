@@ -185,25 +185,13 @@ body{
     width: 550px;
     height: 400px;
     font-size: 20px;
-    background-image: url('https://i.imgur.com/MkMvajk.png');
+    background-image: url('https://i.imgur.com/Bn5KP2R.png');
     background-size: 100%;
     position: absolute;
     top: 250px;
     left: 760px;
     opacity: 0;
 }
-  /* padding: 0px 0px 15px 0px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  border: 1px; */
-  /* .menu{
-    padding: 0px 0px 15px 0px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    border: 1px;
-  } */
   .menu{
     padding: 0px 0px 15px 0px;
     display: flex;
@@ -211,7 +199,3 @@ body{
     align-content: center;
     border: 1px;
   }
-/* .river .raft-one{
-    background-image: url('https://i.imgur.com/821jTNx.png');
-    background-size: 50%;
-} <---- this code is when I tried to appendChild to river element but the raft pciture would not appear on top of the river iamge  */
