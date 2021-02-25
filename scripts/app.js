@@ -18,7 +18,7 @@ function init(){
   function createGrid(startPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-    //   cell.innerText = i
+      //   cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -36,9 +36,12 @@ function init(){
     cells[position].classList.remove(frodoClass)
   }
     
+  const points = 0
 
   //RESULT
   const result = document.querySelector('.result')
+  const resultTwo = document.querySelector('.result-two')
+  const howTo = document.querySelector('.how-to')
 
   // PLACE FRODO BACK
   // REMOVE, UPDATE, ADD
@@ -46,12 +49,11 @@ function init(){
     removeFrodo(currentPosition)
     currentPosition = 82
     addFrodo(currentPosition)
-    document.querySelector('.result-two').style.visiblity = 'initial'
   }
 
   // FRODO WINS
   function frodoWins(){
-    document.querySelector('.result').style.visiblity = 'initial'
+    points + 1
   }
 
   // HOVER INSTRUCTIONS
@@ -84,6 +86,7 @@ function init(){
       removeFrodo(currentPosition)
       if (cells[5].classList.contains('frodo')){
         frodoWins()
+        result.style.opacity = '1'
       }
       if (key === 39 && currentPosition % width !== width - 1){
         currentPosition++
@@ -92,9 +95,11 @@ function init(){
             cells[currentPosition].classList.contains('river-two') ||
             cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
+          resultTwo.style.opacity = '1'
         } else if (
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
+          result.style.opacity = '1'
         }
       }
       if (key === 37 && currentPosition % width !== 0){
@@ -104,9 +109,11 @@ function init(){
            cells[currentPosition].classList.contains('river-two') ||
             cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
+          resultTwo.style.opacity = '1'
         } else if (
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
+          result.style.opacity = '1'
         }
       }
       if (key === 38 && currentPosition >= width){
@@ -116,9 +123,11 @@ function init(){
            cells[currentPosition].classList.contains('river-two') ||
            cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
+          resultTwo.style.opacity = '1'
         } else if (
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
+          result.style.opacity = '1'
         }
       }
       if (key === 40 && currentPosition + width <= width * length - 1){
@@ -128,9 +137,11 @@ function init(){
            cells[currentPosition].classList.contains('river-two') ||
            cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
+          resultTwo.style.opacity = '1'
         } else if (
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
+          result.style.opacity = '1'
         }
       }
       addFrodo(currentPosition)
@@ -144,8 +155,8 @@ function init(){
     const reset = document.querySelector('#reset')
     function clickReset(){
       location.reload()
-      document.querySelector('.result').style.visiblity = 'hidden'
-      document.querySelector('.result-two').style.visiblity = 'hidden'
+      result.style.visiblity = 'hidden'
+      result.style.visiblity = 'hidden'
     } 
     reset.addEventListener('click', clickReset)
 
@@ -293,13 +304,9 @@ function init(){
       }
     })
     if (cells[currentPosition].classList.contains('river')) {
+      resultTwo.style.opacity = '1'
       frodoFell()
     }
-    // else if (cells[currentPosition].classList.contains('rafts')) {
-    //   removeFrodo()
-    //   const newPosition = 
-    //   cells[currentPosition] === rafts
-    // }
     rafts.forEach(item => {
       addRaft(item)
       if (rafts === 32){
@@ -332,9 +339,10 @@ function init(){
         return element - 1
       }
     })
-    if (blackRiders2.some(index => {
+    if (blackRiders.some(index => {
       return index === currentPosition
     })) {
+      resultTwo.style.opacity = '1'
       frodoFell()
     }
     blackRiders.forEach(item => {
@@ -372,6 +380,7 @@ function init(){
     if (blackRiders2.some(index => {
       return index === currentPosition
     })) {
+      resultTwo.style.opacity = '1'
       frodoFell()
     }
     blackRiders2.forEach(item => {
