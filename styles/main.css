@@ -2,7 +2,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: -80px;
+    margin-bottom: -100px;
     width: 20%;
 }
 * {
@@ -36,14 +36,15 @@ body{
     border: 1px;
   }
   #begin, #how-to, #reset{
-    width: 90px;
-    margin: 100px 50px 10px -200px;
+    width: 100px;
+    height: 130px;
+    margin: 90px 50px 10px -200px;
   }
   #begin{
-    margin: 120px 70px 0px 0px;
+    margin: 120px 70px -30px 0px;
   }
   #how-to{
-    margin: 120px 70px 0px 0px;
+    margin: 120px 70px -30px 0px;
   }
   #reset{
     margin: 120px 70px 0px 0px; 
@@ -129,13 +130,10 @@ body{
     padding: 0px 200px 0px 0x;
   }
   .grid div {
-    /* border: 1px solid lightgrey; */
     flex-grow: 1;
     height: 13%;
     width: 9%;
     z-index: -2;
-
-    /* background-color: rgb(235, 201, 127); */
   }
   .result{
       display: flex;
@@ -150,7 +148,7 @@ body{
       background-size: 100%;
       position: absolute;
       top: 250px;
-      left: 680px;
+      left: 610px;
       opacity: 0;
       /* visibility: hidden; */
   }
@@ -168,11 +166,11 @@ body{
     background-size: 100%;
     position: absolute;
     top: 250px;
-    left: 680px;
+    left: 760px;
     opacity: 0;
     /* visibility: hidden; */
 }
-.how-to{
+.how-to-two{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -181,12 +179,12 @@ body{
     width: 550px;
     height: 400px;
     font-size: 20px;
-    background-image: url('https://i.imgur.com/m2BdXSc.png');
+    background-image: url('https://i.imgur.com/MkMvajk.png');
     background-size: 100%;
     position: absolute;
     top: 250px;
-    left: 610px;
-    opacity: 1;
+    left: 760px;
+    opacity: 0;
 }
   /* padding: 0px 0px 15px 0px;
   display: flex;
