@@ -27,7 +27,6 @@ body{
     background-size: contain;
     cursor: pointer;
     position: relative;
-    z-index: 3;
   }
   .frodo {
     background-image: url('https://i.imgur.com/rxccZ3Z.png');
@@ -123,14 +122,14 @@ body{
 }
 .docks{
     background-image: url('https://i.imgur.com/5jkIR6O.gif');
-    background-size: 138% ;
+    background-size: 138%;
 }
-.docks .frodo{
+/* .docks .frodo{
     background-image: url('https://i.imgur.com/VUBLpBp.png');
     background-image: url('https://i.imgur.com/OMnV8lX.gif');
     background-size: 138%;
     z-index: -1;
-}
+} */
 .grid-wrapper{
     height: 100vh;
     display: flex;
@@ -216,4 +215,9 @@ body{
     flex-direction: column;
     justify-content: flex-end;
     margin-right: -460px;
+}
+.grid div.frodo-on-bridge{
+    background-image: url('https://i.imgur.com/85se1kt.gif');
+    background-size: 138%;
+
 }

@@ -78,7 +78,7 @@ function init(){
   const splashAudio = document.getElementById('splash-audio')
 
   function playInn(){
-    innAudio.src = './game-assets/prancingpony.wav'
+    innAudio.src = './game-assets/shire.wav'
     innAudio.play()
   }
 
@@ -91,6 +91,8 @@ function init(){
     splashAudio.src = './game-assets/splash.wav'
     splashAudio.play()
   }
+
+  
 
   // START GAME
   const startButton = document.querySelector('#begin')
@@ -146,6 +148,10 @@ function init(){
         } else if (cells[currentPosition].classList.contains('trees-two')){
           noLeftTree()
         }
+        if (cells[currentPosition].classList.contains('docks')) {
+          console.log('bridge')
+          cells[currentPosition].classList.add('frodo-on-bridge')
+        }
       }
       if (key === 37 && currentPosition % width !== 0){
         currentPosition--
@@ -154,6 +160,7 @@ function init(){
            cells[currentPosition].classList.contains('river-two')){
           frodoFell()
           playSplash()
+          console.log('ahh')
           innAudio.pause()
           resultTwo.style.opacity = '1'
         }  else if (
@@ -170,6 +177,10 @@ function init(){
           noRightTree()
         } else if (cells[currentPosition].classList.contains('trees-two')){
           noRightTree()
+        } 
+        if (cells[currentPosition].classList.contains('docks')) {
+          console.log('bridge')
+          cells[currentPosition].classList.add('frodo-on-bridge')
         }
       }
       if (key === 38 && currentPosition >= width){
@@ -193,9 +204,12 @@ function init(){
           result.style.opacity = '1'
         } else if (cells[currentPosition].classList.contains('trees')){
           noUpTree()
-        }
-        else if (cells[currentPosition].classList.contains('trees-two')){
+        } else if (cells[currentPosition].classList.contains('trees-two')){
           noUpTree()
+        }
+        if (cells[currentPosition].classList.contains('docks')) {
+          console.log('bridge')
+          cells[currentPosition].classList.add('frodo-on-bridge')
         }
       }
       if (key === 40 && currentPosition + width <= width * length - 1){
@@ -222,7 +236,15 @@ function init(){
         } else if (cells[currentPosition].classList.contains('trees-two')){
           noDownTree()
         }
-      }
+        if (cells[currentPosition].classList.contains('docks')) {
+          console.log('bridge')
+          cells[currentPosition].classList.add('frodo-on-bridge')
+        } else if (!cells[currentPosition].classList.contains('docks')) {
+            console.log('off dock')
+            cells[currentPosition].classList.remove('frodo-on-bridge')
+            cells[currentPosition].classList.remove('docks')
+          }
+        }
       addFrodo(currentPosition)
     } 
 
