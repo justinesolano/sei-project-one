@@ -219,5 +219,8 @@ body{
 .grid div.frodo-on-bridge{
     background-image: url('https://i.imgur.com/85se1kt.gif');
     background-size: 138%;
-
+}
+.grid div.inn-win{
+    background-image: url('https://i.imgur.com/T3yD25d.gif');
+    background-size: 129%;
 }
