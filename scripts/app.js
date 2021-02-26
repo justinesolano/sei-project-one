@@ -18,7 +18,7 @@ function init(){
   function createGrid(startPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-    //   cell.innerText = i
+      //   cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -46,8 +46,6 @@ function init(){
   // REMOVE, UPDATE, ADD
   function frodoFell(){
     removeFrodo(currentPosition)
-    currentPosition = 82
-    addFrodo(currentPosition)
   }
   // FRODO WINS
   function frodoWins(){
@@ -73,13 +71,33 @@ function init(){
   hoverImg.addEventListener('mouseleave', handleMouseLeave)
 
 
+  // MUSIC
+  //   const inn = document.querySelector('.inn-ambience')
+  const innAudio = document.getElementById('inn-audio')
+  const nazgulAudio = document.getElementById('nazgul-audio')
+  const splashAudio = document.getElementById('splash-audio')
+
+  function playInn(){
+    innAudio.src = './game-assets/prancingpony.wav'
+    innAudio.play()
+  }
+
+  function playNazgul(){
+    nazgulAudio.src = './game-assets/nazgul.wav'
+    nazgulAudio.play()
+  }
+
+  function playSplash(){
+    splashAudio.src = './game-assets/splash.wav'
+    splashAudio.play()
+  }
+
   // START GAME
   const startButton = document.querySelector('#begin')
 
   function startGame(){
 
     // FRODO CANNOT WALK INTO TREES
-
     function noUpTree(){
       currentPosition += width
     }
@@ -108,10 +126,17 @@ function init(){
         currentPosition++
         if (
           cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
-            cells[currentPosition].classList.contains('river-two') ||
-            cells[currentPosition].classList.contains('black-riders')){
+            cells[currentPosition].classList.contains('river-two')){
+          frodoFell()
+          playSplash()  
+          innAudio.pause()    
+          resultTwo.style.opacity = '1'
+        } else if (
+          cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
           resultTwo.style.opacity = '1'
+          playNazgul()
+          innAudio.pause()
         } else if (
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
@@ -126,10 +151,17 @@ function init(){
         currentPosition--
         if (
           cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
-           cells[currentPosition].classList.contains('river-two') ||
-            cells[currentPosition].classList.contains('black-riders')){
+           cells[currentPosition].classList.contains('river-two')){
+          frodoFell()
+          playSplash()
+          innAudio.pause()
+          resultTwo.style.opacity = '1'
+        }  else if (
+          cells[currentPosition].classList.contains('black-riders')){
           frodoFell()
           resultTwo.style.opacity = '1'
+          playNazgul()
+          innAudio.pause()
         } else if (
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
@@ -144,10 +176,17 @@ function init(){
         currentPosition -= width
         if (
           cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
-           cells[currentPosition].classList.contains('river-two') ||
-           cells[currentPosition].classList.contains('black-riders')){
+           cells[currentPosition].classList.contains('river-two')){
           frodoFell()
+          playSplash()
+          innAudio.pause()
           resultTwo.style.opacity = '1'
+        } else if (
+          cells[currentPosition].classList.contains('black-riders')){
+          frodoFell()
+          innAudio.pause()
+          resultTwo.style.opacity = '1'
+          playNazgul()
         } else if (
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
@@ -163,10 +202,17 @@ function init(){
         currentPosition += width
         if (
           cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
-           cells[currentPosition].classList.contains('river-two') ||
-           cells[currentPosition].classList.contains('black-riders')){
+           cells[currentPosition].classList.contains('river-two')){
           frodoFell()
+          playSplash()
+          innAudio.pause()
           resultTwo.style.opacity = '1'
+        } else if (
+          cells[currentPosition].classList.contains('black-riders')){
+          frodoFell()
+          innAudio.pause()
+          resultTwo.style.opacity = '1'
+          playNazgul()
         } else if (
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
@@ -187,9 +233,10 @@ function init(){
     const reset = document.querySelector('#reset')
     function clickReset(){
       location.reload()
-      result.style.visiblity = 'hidden'
-      result.style.visiblity = 'hidden'
+      //   result.style.visiblity = 'hidden'
+      //   result.style.visiblity = 'hidden'
       currentPosition = 82
+      innAudio.pause()
     } 
     reset.addEventListener('click', clickReset)
   }
@@ -342,6 +389,9 @@ function init(){
     if (cells[currentPosition].classList.contains('river')) {
       resultTwo.style.opacity = '1'
       frodoFell()
+      console.log('ahh')
+      innAudio.pause()
+      playSplash()
     }
     rafts.forEach(item => {
       addRaft(item)
@@ -378,8 +428,10 @@ function init(){
     if (blackRiders.some(index => {
       return index === currentPosition
     })) {
-      resultTwo.style.opacity = '1'
       frodoFell()
+      resultTwo.style.opacity = '1'
+      playNazgul()
+      innAudio.pause()
     }
     blackRiders.forEach(item => {
       addBlackRiders(item)
@@ -414,8 +466,10 @@ function init(){
     if (blackRiders2.some(index => {
       return index === currentPosition
     })) {
-      resultTwo.style.opacity = '1'
       frodoFell()
+      resultTwo.style.opacity = '1'
+      playNazgul()
+      innAudio.pause()
     }
     blackRiders2.forEach(item => {
       addBlackRiders2(item)
@@ -429,7 +483,7 @@ function init(){
 
   startButton.addEventListener('click', riverElements)
   startButton.addEventListener('click', startGame)
-
+  startButton.addEventListener('click', playInn)
 
 
 
