@@ -157,6 +157,10 @@ function init(){
           console.log('bridge')
           cells[currentPosition].classList.add('frodo-on-bridge')
         }
+        if (!cells[currentPosition].classList.contains('tavern')) {
+            cells[5].classList.remove('inn-win')
+            cells[5].classList.add('tavern')
+      }
       }
       if (key === 37 && currentPosition % width !== 0){
         currentPosition--
@@ -187,25 +191,13 @@ function init(){
           console.log('bridge')
           cells[currentPosition].classList.add('frodo-on-bridge')
         }
+        if (!cells[currentPosition].classList.contains('tavern')) {
+            cells[5].classList.remove('inn-win')
+            cells[5].classList.add('tavern')
+      }
       }
       if (key === 38 && currentPosition >= width){
         currentPosition -= width
-        // if (
-        //   cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
-        //    cells[currentPosition].classList.contains('river-two')){
-        //   frodoFell()
-        //   playSplash()
-        //   innAudio.pause()
-        //   resultTwo.style.opacity = '1'
-        //   cells[34].classList.remove('frodo-on-bridge')
-        //   cells[34].classList.add('docks')
-        //   cells[37].classList.remove('frodo-on-bridge')
-        //   cells[37].classList.add('docks')
-        //   cells[40].classList.remove('frodo-on-bridge')
-        //   cells[40].classList.add('docks')
-        //   cells[43].classList.remove('frodo-on-bridge')
-        //   cells[43].classList.add('docks')
-        // } 
         if (
           cells[currentPosition].classList.contains('black-riders') || cells[currentPosition].classList.contains('black-riders-two')){
           frodoFell()
