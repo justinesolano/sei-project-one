@@ -18,7 +18,7 @@ function init(){
   function createGrid(startPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      //   cell.innerText = i
+    //   cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -49,7 +49,8 @@ function init(){
   }
   // FRODO WINS
   function frodoWins(){
-    console.log('WINNER!')
+    playWin()
+    innAudio.pause()
   }
 
   // HOVER INSTRUCTIONS
@@ -76,6 +77,7 @@ function init(){
   const innAudio = document.getElementById('inn-audio')
   const nazgulAudio = document.getElementById('nazgul-audio')
   const splashAudio = document.getElementById('splash-audio')
+  const winAudio = document.getElementById('win-audio')
 
   function playInn(){
     innAudio.src = './game-assets/shire.wav'
@@ -92,7 +94,10 @@ function init(){
     splashAudio.play()
   }
 
-  
+  function playWin(){
+    winAudio.src = './game-assets/win.wav'
+    winAudio.play()
+  }
 
   // START GAME
   const startButton = document.querySelector('#begin')
@@ -134,7 +139,7 @@ function init(){
           innAudio.pause()    
           resultTwo.style.opacity = '1'
         } else if (
-          cells[currentPosition].classList.contains('black-riders')){
+          cells[currentPosition].classList.contains('black-riders') || cells[currentPosition].classList.contains('black-riders-two') ){
           frodoFell()
           resultTwo.style.opacity = '1'
           playNazgul()
@@ -164,7 +169,7 @@ function init(){
           innAudio.pause()
           resultTwo.style.opacity = '1'
         }  else if (
-          cells[currentPosition].classList.contains('black-riders')){
+          cells[currentPosition].classList.contains('black-riders') || cells[currentPosition].classList.contains('black-riders-two')){
           frodoFell()
           resultTwo.style.opacity = '1'
           playNazgul()
@@ -185,31 +190,64 @@ function init(){
       }
       if (key === 38 && currentPosition >= width){
         currentPosition -= width
+        // if (
+        //   cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
+        //    cells[currentPosition].classList.contains('river-two')){
+        //   frodoFell()
+        //   playSplash()
+        //   innAudio.pause()
+        //   resultTwo.style.opacity = '1'
+        //   cells[34].classList.remove('frodo-on-bridge')
+        //   cells[34].classList.add('docks')
+        //   cells[37].classList.remove('frodo-on-bridge')
+        //   cells[37].classList.add('docks')
+        //   cells[40].classList.remove('frodo-on-bridge')
+        //   cells[40].classList.add('docks')
+        //   cells[43].classList.remove('frodo-on-bridge')
+        //   cells[43].classList.add('docks')
+        // } 
         if (
-          cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
-           cells[currentPosition].classList.contains('river-two')){
-          frodoFell()
-          playSplash()
-          innAudio.pause()
-          resultTwo.style.opacity = '1'
-        } else if (
-          cells[currentPosition].classList.contains('black-riders')){
+          cells[currentPosition].classList.contains('black-riders') || cells[currentPosition].classList.contains('black-riders-two')){
           frodoFell()
           innAudio.pause()
           resultTwo.style.opacity = '1'
           playNazgul()
-        } else if (
+        } 
+        if (
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
           result.style.opacity = '1'
-        } else if (cells[currentPosition].classList.contains('trees')){
+        } 
+        if (cells[currentPosition].classList.contains('trees')){
           noUpTree()
-        } else if (cells[currentPosition].classList.contains('trees-two')){
+        }
+        if (cells[currentPosition].classList.contains('trees-two')){
           noUpTree()
         }
         if (cells[currentPosition].classList.contains('docks')) {
-          console.log('bridge')
           cells[currentPosition].classList.add('frodo-on-bridge')
+        }
+        if (cells[currentPosition].classList.contains('tavern')) {
+          cells[currentPosition].classList.add('inn-win')
+        }
+        if (cells[currentPosition].classList.contains('docks')) {
+          cells[currentPosition].classList.add('frodo-on-bridge')
+        } if (!cells[currentPosition].classList.contains('docks')) {
+          cells[43].classList.remove('frodo-on-bridge')
+          cells[43].classList.add('docks')
+        } if (!cells[currentPosition].classList.contains('docks')) {
+          cells[40].classList.remove('frodo-on-bridge')
+          cells[40].classList.add('docks')
+        } if (!cells[currentPosition].classList.contains('docks')) {
+          cells[37].classList.remove('frodo-on-bridge')
+          cells[37].classList.add('docks')
+        } if (!cells[currentPosition].classList.contains('docks')) {
+          cells[34].classList.remove('frodo-on-bridge')
+          cells[34].classList.add('docks')
+        }
+        if (!cells[currentPosition].classList.contains('tavern')) {
+          cells[5].classList.remove('inn-win')
+          cells[5].classList.add('tavern')
         }
       }
       if (key === 40 && currentPosition + width <= width * length - 1){
@@ -221,30 +259,45 @@ function init(){
           playSplash()
           innAudio.pause()
           resultTwo.style.opacity = '1'
-        } else if (
-          cells[currentPosition].classList.contains('black-riders')){
+        } 
+        if (
+          cells[currentPosition].classList.contains('black-riders') || cells[currentPosition].classList.contains('black-riders-two')){
           frodoFell()
           innAudio.pause()
           resultTwo.style.opacity = '1'
           playNazgul()
-        } else if (
+        }
+        if (
           cells[currentPosition].classList.contains('tavern')){
           frodoWins()
           result.style.opacity = '1'
-        } else if (cells[currentPosition].classList.contains('trees')){
+        } 
+        if (cells[currentPosition].classList.contains('trees')){
           noDownTree()
-        } else if (cells[currentPosition].classList.contains('trees-two')){
+        }
+        if (cells[currentPosition].classList.contains('trees-two')){
           noDownTree()
         }
         if (cells[currentPosition].classList.contains('docks')) {
-          console.log('bridge')
           cells[currentPosition].classList.add('frodo-on-bridge')
-        } else if (!cells[currentPosition].classList.contains('docks')) {
-            console.log('off dock')
-            cells[currentPosition].classList.remove('frodo-on-bridge')
-            cells[currentPosition].classList.remove('docks')
-          }
+        } if (!cells[currentPosition].classList.contains('docks')) {
+          cells[43].classList.remove('frodo-on-bridge')
+          cells[43].classList.add('docks')
+        } if (!cells[currentPosition].classList.contains('docks')) {
+          cells[40].classList.remove('frodo-on-bridge')
+          cells[40].classList.add('docks')
+        } if (!cells[currentPosition].classList.contains('docks')) {
+          cells[37].classList.remove('frodo-on-bridge')
+          cells[37].classList.add('docks')
+        } if (!cells[currentPosition].classList.contains('docks')) {
+          cells[34].classList.remove('frodo-on-bridge')
+          cells[34].classList.add('docks')
         }
+        if (!cells[currentPosition].classList.contains('tavern')) {
+            cells[5].classList.remove('inn-win')
+            cells[5].classList.add('tavern')
+      }
+    }
       addFrodo(currentPosition)
     } 
 
