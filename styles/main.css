@@ -52,11 +52,11 @@ body{
   #begin{
     margin: 170px 50px -30px 0px;
   }
-  #how-to{
-    margin: 120px 50px -30px 0px;
-  }
   #reset{
-    margin: 120px 50px 0px 0px; 
+    margin: 120px 50px -30px 0px; 
+  }
+  #how-to{
+    margin: 120px 50px 0px 0px;
   }
   .safezone-one{
     background-color: rgb(27, 68, 27);
