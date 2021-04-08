@@ -75,7 +75,7 @@ body{
     position: relative;
 }
 .raft {
-    background-image: url('../game-assets/raft3.gif');
+    background-image: url('../game-assets/raft.gif');
     background-size: 140%;
     z-index: 2;
 }
