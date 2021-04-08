@@ -9,7 +9,7 @@
     box-sizing: border-box;
   }
 body{
-    background-image: url('https://i.imgur.com/ycJu4jC.jpg');
+    background-image: url('../game-assets/prancingponyinn.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100vh;
@@ -22,14 +22,14 @@ body{
     margin-left: -500px;
 }
   .grid div.frodo {
-    background-image: url('https://i.imgur.com/rxccZ3Z.png');
+    background-image: url('../game-assets/frodofinalr.png');
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
     position: relative;
   }
   .frodo {
-    background-image: url('https://i.imgur.com/rxccZ3Z.png');
+    background-image: url('../game-assets/frodofinalr.png');
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
@@ -64,64 +64,63 @@ body{
     background-color: rgb(71, 36, 15);
   }
 .river{
-    background-image: url('https://i.imgur.com/v6SsdE5.gif');
+    background-image: url('../game-assets/river.gif');
     background-size: 140%;
     position: relative;
     z-index: 0;
 }
 .river .frodo{
-    background-image: url('https://i.imgur.com/VUBLpBp.png');
     background-size: 115%;
     z-index: 2;
     position: relative;
 }
 .raft {
-    background-image: url('https://i.imgur.com/wROXoar.gif');
+    background-image: url('../game-assets/raft3.gif');
     background-size: 140%;
     z-index: 2;
 }
 .tavern{
-    background-image: url('https://i.imgur.com/IrPzgip.gif');
+    background-image: url('../game-assets/innanimated.gif');
     background-size: 129%;
 }
 .tavern-zone{
     background-color: rgb(53, 40, 40);
 }
 .trees{
-    background-image: url('https://i.imgur.com/Chbub34.png');
+    background-image: url('../game-assets/tree.png');
     background-size: 99%;
 }
 .trees-two{
-    background-image: url('https://i.imgur.com/Chbub34.png');
+    background-image: url('../game-assets/tree.png');
     background-size: 99%;
 }
 .road-one{
-    background-image: url('https://i.imgur.com/qPhVn3Z.png');
+    background-image: url('../game-assets/road.png');
     background-size: 117%;
     z-index: 2;
 }
 .road-two{
-        background-image: url('https://i.imgur.com/qPhVn3Z.png');
+        background-image: url('../game-assets/road.png');
         background-size: 117%;
 }
 .road-three{
-    background-image: url('https://i.imgur.com/qPhVn3Z.png');
+    background-image: url('../game-assets/road.png');
     background-size: 100%;
 }
 .river-two{
-    background-image: url('https://i.imgur.com/v6SsdE5.gif');
+    background-image: url('../game-assets/river.gif');
     background-size: 140%;
 }
 .black-riders{
-    background-image: url('https://i.imgur.com/dpYsUky.png');
+    background-image: url('../game-assets/nazgul.png');
     background-size: 117%;
 }
 .black-riders-two{
-    background-image: url('https://i.imgur.com/dpYsUky.png');
+    background-image: url('../game-assets/nazgul.png');
     background-size: 117%;
 }
 .docks{
-    background-image: url('https://i.imgur.com/5jkIR6O.gif');
+    background-image: url('../game-assets/dockfinal.gif');
     background-size: 138%;
 }
 /* .docks .frodo{
