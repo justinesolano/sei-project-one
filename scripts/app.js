@@ -17,7 +17,7 @@ function init(){
   function createGrid(startPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      //   cell.innerText = i
+        // cell.innerText = i 
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -153,6 +153,12 @@ function init(){
           console.log('bridge')
           cells[currentPosition].classList.add('frodo-on-bridge')
         }
+        if (cells[currentPosition].classList.contains('road-one')) {
+          cells[currentPosition].classList.add('frodo-on-road')
+        }
+        if (cells[currentPosition].classList.contains('road-two')) {
+          cells[currentPosition].classList.add('frodo-on-road')
+        }
         if (!cells[currentPosition].classList.contains('tavern')) {
           cells[5].classList.remove('inn-win')
           cells[5].classList.add('tavern')
@@ -162,7 +168,7 @@ function init(){
         currentPosition--
         if (
           cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
-             cells[currentPosition].classList.contains('river-two')){
+            cells[currentPosition].classList.contains('river-two')){
           frodoFell()
           playSplash()
           console.log('ahh')
@@ -186,6 +192,12 @@ function init(){
         if (cells[currentPosition].classList.contains('docks')) {
           console.log('bridge')
           cells[currentPosition].classList.add('frodo-on-bridge')
+        }
+        if (cells[currentPosition].classList.contains('road-one')) {
+          cells[currentPosition].classList.add('frodo-on-road')
+        }
+        if (cells[currentPosition].classList.contains('road-two')) {
+          cells[currentPosition].classList.add('frodo-on-road')
         }
         if (!cells[currentPosition].classList.contains('tavern')) {
           cells[5].classList.remove('inn-win')
@@ -215,6 +227,15 @@ function init(){
         if (cells[currentPosition].classList.contains('docks')) {
           cells[currentPosition].classList.add('frodo-on-bridge')
         }
+        if (cells[currentPosition].classList.contains('raft')) {
+          cells[currentPosition].classList.add('frodo-on-raft')
+        }
+        if (cells[currentPosition].classList.contains('road-one')) {
+          cells[currentPosition].classList.add('frodo-on-road')
+        }
+        if (cells[currentPosition].classList.contains('road-two')) {
+          cells[currentPosition].classList.add('frodo-on-road')
+        }
         if (cells[currentPosition].classList.contains('tavern')) {
           cells[currentPosition].classList.add('inn-win')
         }
@@ -233,16 +254,120 @@ function init(){
           cells[34].classList.remove('frodo-on-bridge')
           cells[34].classList.add('docks')
         }
+        if (!cells[currentPosition].classList.contains('raft')) {
+          cells[32].classList.remove('frodo-on-raft')
+          cells[32].classList.add('river')
+          }
+          if (!cells[currentPosition].classList.contains('raft')) {
+          cells[29].classList.remove('frodo-on-raft')
+          cells[29].classList.add('river')
+          }
+          if (!cells[currentPosition].classList.contains('raft')) {
+          cells[26].classList.remove('frodo-on-raft')
+          cells[26].classList.add('river')
+          }
+          if (!cells[currentPosition].classList.contains('raft')) {
+          cells[23].classList.remove('frodo-on-raft')
+          cells[23].classList.add('river')
+          }
         if (!cells[currentPosition].classList.contains('tavern')) {
           cells[5].classList.remove('inn-win')
           cells[5].classList.add('tavern')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[76].classList.remove('frodo-on-road')
+          cells[76].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[75].classList.remove('frodo-on-road')
+          cells[75].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[74].classList.remove('frodo-on-road')
+          cells[74].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[73].classList.remove('frodo-on-road')
+          cells[73].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[72].classList.remove('frodo-on-road')
+          cells[72].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[71].classList.remove('frodo-on-road')
+          cells[71].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[70].classList.remove('frodo-on-road')
+          cells[70].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[69].classList.remove('frodo-on-road')
+          cells[69].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[68].classList.remove('frodo-on-road')
+          cells[68].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[67].classList.remove('frodo-on-road')
+          cells[67].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[66].classList.remove('frodo-on-road')
+          cells[66].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[54].classList.remove('frodo-on-road')
+          cells[54].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[53].classList.remove('frodo-on-road')
+          cells[53].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[52].classList.remove('frodo-on-road')
+          cells[52].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[51].classList.remove('frodo-on-road')
+          cells[51].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[50].classList.remove('frodo-on-road')
+          cells[50].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[49].classList.remove('frodo-on-road')
+          cells[49].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[48].classList.remove('frodo-on-road')
+          cells[48].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[47].classList.remove('frodo-on-road')
+          cells[47].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[46].classList.remove('frodo-on-road')
+          cells[46].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[45].classList.remove('frodo-on-road')
+          cells[45].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[44].classList.remove('frodo-on-road')
+          cells[44].classList.add('road-two')
         }
       }
       if (key === 40 && currentPosition + width <= width * length - 1){
         currentPosition += width
         if (
           cells[currentPosition].classList.contains('river') && !cells[currentPosition].classList.contains('raft') ||
-             cells[currentPosition].classList.contains('river-two')){
+            cells[currentPosition].classList.contains('river-two')){
           frodoFell()
           playSplash()
           innAudio.pause()
@@ -260,6 +385,15 @@ function init(){
           frodoWins()
           result.style.opacity = '1'
         } 
+        if (cells[currentPosition].classList.contains('road-one')) {
+          cells[currentPosition].classList.add('frodo-on-road')
+        }
+        if (cells[currentPosition].classList.contains('road-two')) {
+          cells[currentPosition].classList.add('frodo-on-road')
+        }
+        if (cells[currentPosition].classList.contains('raft')) {
+          cells[currentPosition].classList.add('frodo-on-raft')
+        }
         if (cells[currentPosition].classList.contains('trees')){
           noDownTree()
         }
@@ -280,6 +414,110 @@ function init(){
         } if (!cells[currentPosition].classList.contains('docks')) {
           cells[34].classList.remove('frodo-on-bridge')
           cells[34].classList.add('docks')
+        }
+        if (!cells[currentPosition].classList.contains('raft')) {
+        cells[32].classList.remove('frodo-on-raft')
+        cells[32].classList.add('river')
+        }
+        if (!cells[currentPosition].classList.contains('raft')) {
+        cells[29].classList.remove('frodo-on-raft')
+        cells[29].classList.add('river')
+        }
+        if (!cells[currentPosition].classList.contains('raft')) {
+        cells[26].classList.remove('frodo-on-raft')
+        cells[26].classList.add('river')
+        }
+        if (!cells[currentPosition].classList.contains('raft')) {
+        cells[23].classList.remove('frodo-on-raft')
+        cells[23].classList.add('river')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[76].classList.remove('frodo-on-road')
+          cells[76].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[75].classList.remove('frodo-on-road')
+          cells[75].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[74].classList.remove('frodo-on-road')
+          cells[74].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[73].classList.remove('frodo-on-road')
+          cells[73].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[72].classList.remove('frodo-on-road')
+          cells[72].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[71].classList.remove('frodo-on-road')
+          cells[71].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[70].classList.remove('frodo-on-road')
+          cells[70].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[69].classList.remove('frodo-on-road')
+          cells[69].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[68].classList.remove('frodo-on-road')
+          cells[68].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[67].classList.remove('frodo-on-road')
+          cells[67].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-one')) {
+          cells[66].classList.remove('frodo-on-road')
+          cells[66].classList.add('road-one')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[54].classList.remove('frodo-on-road')
+          cells[54].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[53].classList.remove('frodo-on-road')
+          cells[53].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[52].classList.remove('frodo-on-road')
+          cells[52].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[51].classList.remove('frodo-on-road')
+          cells[51].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[50].classList.remove('frodo-on-road')
+          cells[50].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[49].classList.remove('frodo-on-road')
+          cells[49].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[48].classList.remove('frodo-on-road')
+          cells[48].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[47].classList.remove('frodo-on-road')
+          cells[47].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[46].classList.remove('frodo-on-road')
+          cells[46].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[45].classList.remove('frodo-on-road')
+          cells[45].classList.add('road-two')
+        }
+        if (!cells[currentPosition].classList.contains('road-two')) {
+          cells[44].classList.remove('frodo-on-road')
+          cells[44].classList.add('road-two')
         }
         if (!cells[currentPosition].classList.contains('tavern')) {
           cells[5].classList.remove('inn-win')

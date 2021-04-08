@@ -213,6 +213,15 @@ body{
     background-image: url('../game-assets/dockfrodo.gif');
     background-size: 138%;
 }
+.grid div.frodo-on-raft{
+  background-image: url('../game-assets/frodoraft.gif');
+  background-size: 138%;
+}
+.grid div.frodo-on-road{
+  background-image: url('../game-assets/frodoroad.png');
+  background-size: 117%;
+  background-repeat: repeat;
+}
 .grid div.inn-win{
     background-image: url('../game-assets/innwin.gif');
     background-size: 129%;
