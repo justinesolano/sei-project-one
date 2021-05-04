@@ -1,5 +1,5 @@
 # General Assembly Project 3: Jetflix
-![Frodder Logo](../game-assets/frodder.png)
+![Frodder Logo](game-assets/frodder.png)
 ---- 
 # Table of Contents
 * Project Brief
