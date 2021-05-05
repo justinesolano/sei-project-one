@@ -26,8 +26,8 @@ https://justinesolano.github.io/sei-project-one/
 
 ## Controls
 - Click the Begin button on the side menu.
-- Use the left ( left-arrow ) and right ( right-arrow ) arrow keys to move Frodo left and right, respectively.
-- Use the up ( up-arrow ) and down ( down-arrow ) arrow keys to move up and down, respectively.
+- Use the left ( <img src="https://img.icons8.com/ios/50/000000/long-arrow-left.png" alt="left-arrow" width="10" /> ) and right ( <img src="https://img.icons8.com/ios/50/000000/long-arrow-right.png" alt="right-arrow" width="10" /> ) arrow keys to move Frodo left and right, respectively.
+- Use the up ( <img src="https://img.icons8.com/ios/50/000000/long-arrow-up.png" alt="up-arrow" width="10" /> ) and down ( <img src="https://img.icons8.com/ios/50/000000/long-arrow-down.png" alt="down-arrow" width="10" /> ) arrow keys to move up and down, respectively.
 - Once game is finished, press Restart then Begin on the side menu.
 
 ## Technologies used
