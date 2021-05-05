@@ -590,6 +590,7 @@ function init(){
     roadOne.classList.add('road-one')
     roadElements.push(roadOne)
   }
+  
   // BLACK RIDERS
   let blackRiders = [67, 69, 71, 73, 75]
   blackRiders.forEach(index => {
@@ -672,14 +673,12 @@ function init(){
     } else if (rafts.some(element => {
       return element % width === 0
     })){
-  
       direction = 'right'
     }
     rafts = rafts.map(element => {
       if (direction === 'right'){
         return element + 1
-      }
-      else if (direction === 'left'){
+      } else if (direction === 'left'){
         return element - 1
       }
     })
@@ -717,8 +716,7 @@ function init(){
     blackRiders = blackRiders.map(element => {
       if (direction === 'right'){
         return element + 1
-      }
-      else if (direction === 'left'){
+      } else if (direction === 'left'){
         return element - 1
       }
     })
@@ -755,8 +753,7 @@ function init(){
     blackRiders2 = blackRiders2.map(element => {
       if (direction === 'right'){
         return element + 1
-      }
-      else if (direction === 'left'){
+      } else if (direction === 'left'){
         return element - 1
       }
     })
