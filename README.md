@@ -22,7 +22,7 @@ Frodder is a Lord of the Rings-themed grid-based game inspired by the 1981 arcad
 https://justinesolano.github.io/sei-project-one/
 
 ## Demonstration
--- video --
+![Frodder Gameplay](game-assets/gameplay.gif)
 
 ## Controls
 - Click the Begin button on the side menu.
