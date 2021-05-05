@@ -1,4 +1,4 @@
-# General Assembly Project 3: Jetflix
+# General Assembly Project 1: Frodder
 ![Frodder Logo](game-assets/frodder.png)
 ---- 
 # Table of Contents
@@ -26,8 +26,8 @@ https://justinesolano.github.io/sei-project-one/
 
 ## Controls
 - Click the Begin button on the side menu.
-- Use the left (left-arrow) and right (right-arrow) arrow keys to move Frodo left and right, respectively.
-- Use the up (up-arrow) and down (down-arrow) arrow keys to move up and down, respectively.
+- Use the left ( left-arrow ) and right ( right-arrow ) arrow keys to move Frodo left and right, respectively.
+- Use the up ( up-arrow ) and down ( down-arrow ) arrow keys to move up and down, respectively.
 - Once game is finished, press Restart then Begin on the side menu.
 
 ## Technologies used
