@@ -257,19 +257,19 @@ function init(){
         if (!cells[currentPosition].classList.contains('raft')) {
           cells[32].classList.remove('frodo-on-raft')
           cells[32].classList.add('river')
-          }
-          if (!cells[currentPosition].classList.contains('raft')) {
+        }
+        if (!cells[currentPosition].classList.contains('raft')) {
           cells[29].classList.remove('frodo-on-raft')
           cells[29].classList.add('river')
-          }
-          if (!cells[currentPosition].classList.contains('raft')) {
+        }
+        if (!cells[currentPosition].classList.contains('raft')) {
           cells[26].classList.remove('frodo-on-raft')
           cells[26].classList.add('river')
-          }
-          if (!cells[currentPosition].classList.contains('raft')) {
+        }
+        if (!cells[currentPosition].classList.contains('raft')) {
           cells[23].classList.remove('frodo-on-raft')
           cells[23].classList.add('river')
-          }
+        }
         if (!cells[currentPosition].classList.contains('tavern')) {
           cells[5].classList.remove('inn-win')
           cells[5].classList.add('tavern')
@@ -416,20 +416,20 @@ function init(){
           cells[34].classList.add('docks')
         }
         if (!cells[currentPosition].classList.contains('raft')) {
-        cells[32].classList.remove('frodo-on-raft')
-        cells[32].classList.add('river')
+          cells[32].classList.remove('frodo-on-raft')
+          cells[32].classList.add('river')
         }
         if (!cells[currentPosition].classList.contains('raft')) {
-        cells[29].classList.remove('frodo-on-raft')
-        cells[29].classList.add('river')
+          cells[29].classList.remove('frodo-on-raft')
+          cells[29].classList.add('river')
         }
         if (!cells[currentPosition].classList.contains('raft')) {
-        cells[26].classList.remove('frodo-on-raft')
-        cells[26].classList.add('river')
+          cells[26].classList.remove('frodo-on-raft')
+          cells[26].classList.add('river')
         }
         if (!cells[currentPosition].classList.contains('raft')) {
-        cells[23].classList.remove('frodo-on-raft')
-        cells[23].classList.add('river')
+          cells[23].classList.remove('frodo-on-raft')
+          cells[23].classList.add('river')
         }
         if (!cells[currentPosition].classList.contains('road-one')) {
           cells[76].classList.remove('frodo-on-road')
