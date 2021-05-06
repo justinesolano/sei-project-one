@@ -2,13 +2,12 @@
 ![Frodder Logo](game-assets/frodder.png)
 ----
 # Table of Contents
-* Project Brief
 * Project Description
-* Technologies & Installation
+* Project Demo
+* Technologies
 * Process
  - Planning
  - Game
-* Final Walkthrough
 * Wins & bugs
 * Extra Features
  
@@ -259,7 +258,7 @@ I managed to set these up on my own. Because I had asked for help everyday of th
  
 I also added a game track which plays when the startGame button is pressed. When Frodo collides with a black rider, the sound of a Nazgûl screech plays. When Frodo falls into the river, a splash sound plays. When Frodo reaches the inn, a sound of a cheer plays which I cut from a scene from Return of the King from just before the Rohirrim charge onto Pelennor Fields.
  
-### Styling (day 7 & 8)
+### STYLING (day 7 & 8)
 I started properly styling during day 7. Most of the assets had been created during the process because I needed to have the pictures of the obstacles ready so I could use them during code-testing. I created the 'Frodder' title on Fontmeme.com. The background image used is of a 3D medieval town with a pub/inn in the center. This was to tie together the goal of the game which is to reach the Prancing Pony Inn at the top.
  
 The 'Begin', 'Restart', and 'How To Play' text were created on Fontmeme.com also. I then used Photoshop to place them on top of the ring to use as buttons for the menu. As an extra mini feature, I placed a mini cartoon of Aragorn on the bottom-right of the screen.
