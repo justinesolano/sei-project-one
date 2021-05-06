@@ -273,7 +273,9 @@ I definitely feel that the project helped consolidate a lot of what we had learn
  
 ### Hurdles:
 One of the biggest hurdles of the project actually came at the end of the project. Up until the last 10 minutes of the last hour before project week ended, something happened to my Github which suddenly disallowed me from pushing my final changes. I made a last minute change to the music that played when the game started which I couldn't push. There was a file which exceeded the size limit allowed which I then deleted but this did not solve the problem.
+
 ![Frodder Github Error](game-assets/error.jpg)
+
 I consulted my instructor but none of us could find a way around this. I tried to push many, many times throughout February and March to no avail. In April, I decided to try and fix it again and searched Google for a solution for many hours and finally managed to find one which worked. 
 
 Another big hurdle was the image of Frodo overtaking each cell whenever the player moved into it. For example, the image used for the road would disappear when Frodo moved into it. Because the image is a png, only Frodo would appear in the cell and the background would be transparent. This also applied to the png of the black riders as they were on the same rows as the road. I managed to fix this with a long solution which was to place the black rider png on top of the image of the road so whenever they moved, there would be a road in the background also. I did this with the Frodo png for the road, the bridge, the raft and the Prancing Pony Inn gif.
