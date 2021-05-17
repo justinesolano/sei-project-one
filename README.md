@@ -43,8 +43,6 @@ https://justinesolano.github.io/sei-project-one/
 # PROCESS
 ## PLANNING (day 1)
 ### Concept
-When starting the project, I was very worried because I didn't know where to begin. My understanding of basic JavaScript was very shaky at this point. I decided to do Frogger because the functions seemed very simple and straightforward.
- 
 I spent the first day writing pseudo-code and breaking down each facet of the game so I could understand what I needed to do for the project. The priority was setting up the controls for the player to move across the grid. I made sure to dedicate a few days to this before moving onto anything else complex. The second priority was the collision function between the player and the obstacles. My third priority was the obstacle movements across the grid. This would be the MVP.
  
 ### Storyboard/Wireframes
@@ -69,8 +67,8 @@ After planning and getting signed off to start, I started with creating the grid
    addFrodo(startPosition)
  }
 ```
-Although we had a quick tutorial on grid creation before project week began, I still did not understand what the basics of this certain function did. I was very confused still about JavaScript and it definitely overwhelmed me during the first few days of the project. I was also trying to experiment with grid widths but anytime I changed it to anything over 11 cells, some rows would have more cells than others. I had to keep the width at 11 and have lesser rows and columns.
- 
+Creating the grid helped me understand for loops further, as well as interacting with the DOM throughh JavaScript.
+
 After, I set up the side menu quickly with the 'Begin', 'Restart' and 'How To Play' buttons. The 'How To Play' button, when hovered over, popped up with instructions in the middle of the screen.
 ```javascript
  // HOVER INSTRUCTIONS
@@ -195,9 +193,8 @@ setInterval(() => {
 ```
 This was identical for the `blackRiders` elements.
  
-The main controls of the game and the collision functions were the hardest and most complex part of the project. I placed the main movements within a `startGame()` function so that the player would not be able to move until they pressed the start button.
- 
-Although I knew exactly what I wanted my game to do, the big problem and frustration for me was not knowing how to do it and not even knowing where to start. I received help from one of my teaching assistants because I just could not understand where the game needed to go. After it was shown to me how to achieve the key movements using conditionals, I managed to set up the simple movements for each arrow key.
+I placed the main movements within a `startGame()` function so that the player would not be able to move until they pressed the start button. The main controls of the game and the collision functions were the hardest and most complex part of the project. I received help from one of my teaching assistants on how to approach setting up the key movements using conditionals. After some clarification, I managed to set up the simple movements for each arrow key.
+
 Right
 ``` javascript
      if (key === 39 && currentPosition % width !== width - 1){
@@ -227,7 +224,7 @@ Once the movements were set up, I needed to work on the collision function. I us
  }
 ```
  
-Most of the obstacles were set up and moving by day 5 at which point I felt more comfortable coding. Before the project, I was very stressed about having to write JavaScript and do the project because it all seemed very complicated and beyond my skills at the time. However, it was during day 4/5 that I took an hour to review the code to see whether I knew what was going on and it was then when I miraculously began to understand more about JavaScript basics. I reached my MVP by day 6.
+Most of the obstacles were set up and moving by day 5 at which point I felt more comfortable coding.During day 4/5, I took an hour to review the code to see whether I knew what was going on and it was then when I began to understand more about JavaScript basics and I felt more excited with what I had learnt. I reached my MVP by day 6.
  
 During day 7, I decided to add some extra hurdles to the game. I added trees to the first empty road in the grid to block the player's way and make the game harder. I also added trees to the top row beside the Prancing Pony Inn to make the game look nicer. I created a function for all the trees and each arrow movement:
 ```javascript
