@@ -217,7 +217,7 @@ Down
  
 I actually understood the way the specified conditions worked but doing the math to write them did take a bit of time.
  
-Once the movements were set up, I needed to work on the collision function. I used nested conditionals with each arrow movement to do this. Everytime the player's current position contains the class names of 'river, 'river-two', 'black-riders' or 'black-riders-two', this called the `frodoFell()` function variable
+Once the movements were set up, I needed to work on the collision function. I used nested conditionals with each arrow movement to do this. Everytime the player's current position contains the class names of 'river, 'river-two', 'black-riders' or 'black-riders-two', this called the `frodoFell()` function variable.
 ```javascript
  function frodoFell(){
    removeFrodo(currentPosition)
